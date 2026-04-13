@@ -76,8 +76,16 @@
         .img-container:hover img {
             transform: scale(1.05);
         }
-        .card-info {
-            padding: 15px 5px 5px;
+        .story-snippet {
+            font-size: 1em;
+            color: #444;
+            background: #fdfdfd;
+            border-left: 4px solid var(--primary);
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+            text-align: left;
+            border-radius: 4px;
         }
         h3 { margin: 0 0 5px; font-size: 1.4em; color: var(--secondary); }
         p.landmark { margin: 0 0 15px; color: #7f8c8d; font-size: 1em; }
@@ -247,14 +255,17 @@
                 const safeLandmark = item.landmark.replace(/'/g, "\\'");
                 const safeCountry = item.country.replace(/'/g, "\\'");
 
+                const safeStory = item.story ? item.story.replace(/'/g, "&apos;").replace(/"/g, "&quot;") : '';
+
                 card.innerHTML = `
                     <div class="badge">Étape ${stepNumber}</div>
                     <div class="img-container" onclick="openImage('${imgSrc}')">
                         <img src="${imgSrc}" alt="${item.country}" loading="lazy" title="Cliquez pour agrandir !">
                     </div>
-                    <div class="card-info">
+                    <div class="card-info" style="padding: 15px 5px 5px;">
                         <h3>${item.country}</h3>
                         <p class="landmark">${item.landmark}</p>
+                        ${safeStory ? `<div class="story-snippet">${safeStory}</div>` : ''}
                         <button onclick="openMap('${safeLandmark}', '${safeCountry}', '${mapLink}')" class="map-btn">
                             <span class="map-icon">📍</span> Voir sur la carte
                         </button>
