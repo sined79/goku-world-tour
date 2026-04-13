@@ -3,32 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goku & Chi-Chi World Tour</title>
+    <title>Goku & Chi-Chi autour du monde !</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f9; text-align: center; padding: 20px; color: #333; }
-        h1 { color: #d35400; font-size: 2.5em; margin-bottom: 10px; }
-        .description { max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; line-height: 1.6; color: #555; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
-        .card { background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        img { width: 100%; border-radius: 8px; display: block; }
-        h3 { margin: 15px 0 5px; font-size: 1.4em; color: #2c3e50; }
-        p.landmark { margin: 0; color: #7f8c8d; font-style: italic; }
+        :root {
+            --primary: #FF7300;
+            --secondary: #1E3799;
+            --bg: #F0F3F4;
+        }
+        body { 
+            font-family: 'Comic Sans MS', 'Nunito', sans-serif; 
+            background: var(--bg); 
+            text-align: center; 
+            padding: 20px; 
+            color: #333; 
+            margin: 0;
+        }
+        .header {
+            background: var(--secondary);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #FFA502; 
+            font-size: 3em; 
+            margin: 0 0 15px 0; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .description { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            font-size: 1.2em; 
+            line-height: 1.6; 
+            background: rgba(255,255,255,0.1); 
+            padding: 20px; 
+            border-radius: 12px; 
+        }
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 25px; 
+            max-width: 1300px; 
+            margin: auto; 
+            padding-bottom: 50px;
+        }
+        .card { 
+            background: #fff; 
+            padding: 15px; 
+            border-radius: 16px; 
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08); 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            position: relative;
+        }
+        .card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+        img { 
+            width: 100%; 
+            border-radius: 10px; 
+            display: block; 
+            aspect-ratio: 2/3;
+            object-fit: cover;
+        }
+        .card-info {
+            padding: 15px 5px 5px;
+        }
+        h3 { 
+            margin: 0 0 5px; 
+            font-size: 1.6em; 
+            color: var(--secondary); 
+        }
+        p.landmark { 
+            margin: 0 0 15px; 
+            color: #7f8c8d; 
+            font-size: 1.1em;
+        }
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.2s;
+            font-size: 1em;
+        }
+        .map-btn:hover {
+            background: #E66700;
+        }
+        .map-icon {
+            font-size: 1.2em;
+        }
+        .badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
-    <h1>Goku & Chi-Chi World Tour</h1>
-    <p class="description">Plongez dans l'intimité du couple le plus emblématique de l'univers Dragon Ball. De leur promesse d'enfance au tournoi d'arts martiaux jusqu'à leur vie de famille à l'ombre du Mont Paozu, découvrez une galerie exclusive célébrant l'union entre le plus puissant des Saiyans et la princesse du mont Frypan. Explorez des illustrations rares, des captures cultes et des moments de complicité qui prouvent que, derrière chaque grand guerrier, se cache une femme de caractère.</p>
+    <div class="header">
+        <h1>🌍 Goku & Chi-Chi autour du monde ! 🐉</h1>
+        <p class="description">
+            Plongez dans l'intimité du couple le plus emblématique de l'univers Dragon Ball. 
+            De la promesse d'enfance jusqu'à leur vie de famille, explorez la planète à travers les yeux de Goku et de la princesse Chi-Chi !<br><br>
+            Découvrez une galerie où chaque image célèbre un nouveau pays et un monument incroyable. Clique sur le bouton "Voir sur la carte" pour découvrir la vraie géographie des lieux avec tes parents !
+        </p>
+    </div>
+    
     <div class="gallery" id="gallery"></div>
+    
     <script>
         fetch('data.json').then(r => r.json()).then(data => {
             const gallery = document.getElementById('gallery');
-            data.reverse().forEach(item => {
+            // Inverser pour avoir les plus récents en premier (ou l'inverse selon le souhait)
+            data.reverse().forEach((item, index) => {
+                const stepNumber = data.length - index; // Numéro de l'étape
+                
                 const card = document.createElement('div');
                 card.className = 'card';
-                card.innerHTML = `<img src="images/${item.filename}" alt="${item.country}" loading="lazy">
-                                  <h3>${item.country}</h3>
-                                  <p class="landmark">${item.landmark}</p>`;
+                
+                // Génération de l'URL Google Maps dynamique si elle n'existe pas dans le JSON
+                const query = encodeURIComponent(`${item.landmark}, ${item.country}`);
+                const mapLink = item.mapLink || `https://www.google.com/maps/search/?api=1&query=${query}`;
+                
+                card.innerHTML = `
+                    <div class="badge">Étape ${stepNumber}</div>
+                    <img src="images/${item.filename}" alt="${item.country}" loading="lazy">
+                    <div class="card-info">
+                        <h3>${item.country}</h3>
+                        <p class="landmark">${item.landmark}</p>
+                        <a href="${mapLink}" target="_blank" class="map-btn">
+                            <span class="map-icon">📍</span> Voir sur la carte
+                        </a>
+                    </div>
+                `;
                 gallery.appendChild(card);
             });
         }).catch(err => console.error('Erreur lors du chargement des données:', err));
