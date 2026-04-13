@@ -69,5 +69,10 @@
         "country": "Greece",
         "landmark": "Acropolis of Athens",
         "filename": "image-1---6f2c2a9b-03ed-46ee-be57-310008271b25.jpg"
+    },
+    {
+        "country": "Canada",
+        "landmark": "Niagara Falls",
+        "filename": "image-1---d415a64a-c7e4-4aad-81fd-28e536ad8a05.jpg"
     }
 ]
