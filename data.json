@@ -64,5 +64,10 @@
         "landmark": "Machu Picchu",
         "filename": "image-1---62d3f38c-627f-40e9-8c1f-c2f0dfccace3.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Machu%20Picchu%2C%20P%C3%A9rou"
+    },
+    {
+        "country": "Greece",
+        "landmark": "Acropolis of Athens",
+        "filename": "image-1---6f2c2a9b-03ed-46ee-be57-310008271b25.jpg"
     }
 ]
