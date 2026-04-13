@@ -279,6 +279,7 @@
                 // On échappe les apostrophes pour le JavaScript inline
                 const safeLandmark = item.landmark.replace(/'/g, "\\'");
                 const safeCountry = item.country.replace(/'/g, "\\'");
+                const safeMapLink = mapLink.replace(/'/g, "\\'");
 
                 const safeStory = item.story ? item.story.replace(/'/g, "&apos;").replace(/"/g, "&quot;") : '';
 
@@ -291,7 +292,7 @@
                         <h3>${item.country}</h3>
                         <p class="landmark">${item.landmark}</p>
                         ${safeStory ? `<div class="story-snippet">${safeStory}</div>` : ''}
-                        <button onclick="openMap('${safeLandmark}', '${safeCountry}', '${mapLink}')" class="map-btn">
+                        <button onclick="openMap('${safeLandmark}', '${safeCountry}', '${safeMapLink}')" class="map-btn">
                             <span class="map-icon">📍</span> Voir sur la carte
                         </button>
                     </div>
