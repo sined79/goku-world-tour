@@ -12,6 +12,9 @@
             --secondary: #1E3799;
             --bg: #F0F3F4;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body { 
             font-family: 'Comic Sans MS', 'Nunito', sans-serif; 
             background: var(--bg); 
@@ -121,6 +124,7 @@
         .latest-btn-header:hover { transform: scale(1.05); }
         
         /* Modales (Lightbox & Carte) */
+        .modal {
             display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
         }
