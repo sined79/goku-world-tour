@@ -74,5 +74,10 @@
         "country": "Canada",
         "landmark": "Niagara Falls",
         "filename": "image-1---d415a64a-c7e4-4aad-81fd-28e536ad8a05.jpg"
+    },
+    {
+        "country": "Mexico",
+        "landmark": "Chichen Itza",
+        "filename": "image-1---4bbde2ba-ff8a-46bb-b1fd-e2307fbdf03f.jpg"
     }
 ]
