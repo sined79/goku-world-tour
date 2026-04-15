@@ -158,14 +158,12 @@
         const maps = {};
         const coordsCache = {};
 
-        // Custom Dragon Ball SVG Marker
-        const dbIconHTML = `<svg viewBox="0 0 100 100" style="filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.4));"><circle cx="50" cy="50" r="48" fill="#f39c12" stroke="#e67e22" stroke-width="4"/><path d="M50 15 L58 38 L80 40 L62 55 L68 78 L50 65 L32 78 L38 55 L20 40 L42 38 Z" fill="#c0392b"/></svg>`;
-        const dbIcon = L.divIcon({
-            className: 'dragon-ball-marker',
-            html: dbIconHTML,
-            iconSize: [36, 36],
-            iconAnchor: [18, 18]
-        });
+        // Custom Dragon Ball SVG Markers (1 star for start, 4 star for end)
+        const dbStartHTML = `<svg viewBox="0 0 100 100" style="filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.4));"><circle cx="50" cy="50" r="48" fill="#f39c12" stroke="#e67e22" stroke-width="4"/><text x="50" y="65" font-size="50" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text></svg>`;
+        const dbEndHTML = `<svg viewBox="0 0 100 100" style="filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.4));"><circle cx="50" cy="50" r="48" fill="#f39c12" stroke="#e67e22" stroke-width="4"/><text x="35" y="45" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text><text x="65" y="45" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text><text x="35" y="75" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text><text x="65" y="75" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text></svg>`;
+        
+        const dbStartIcon = L.divIcon({ className: 'dragon-ball-marker', html: dbStartHTML, iconSize: [36, 36], iconAnchor: [18, 18] });
+        const dbEndIcon = L.divIcon({ className: 'dragon-ball-marker', html: dbEndHTML, iconSize: [36, 36], iconAnchor: [18, 18] });
 
         function closeImage() {
             document.getElementById('imageModal').classList.remove('active');
@@ -202,39 +200,31 @@
         }
 
         async function initMapForCard(index) {
-            if (maps[index]) return; // Already initialized
+            if (maps[index]) return; 
 
             const mapDiv = document.getElementById('map-' + index);
-            const mapLink = mapDiv.getAttribute('data-gmaps');
-            const currPlace = mapDiv.getAttribute('data-curr');
-            const prevPlace = mapDiv.getAttribute('data-prev');
-            const fallbackCountry = mapDiv.getAttribute('data-country');
+            
+            const currLat = parseFloat(mapDiv.getAttribute('data-lat'));
+            const currLon = parseFloat(mapDiv.getAttribute('data-lon'));
+            const prevLatStr = mapDiv.getAttribute('data-prev-lat');
+            const prevLonStr = mapDiv.getAttribute('data-prev-lon');
 
-            // Initialize Leaflet Map
             const map = L.map('map-' + index).setView([20, 0], 2);
             maps[index] = map;
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap'
             }).addTo(map);
             
-            // Fix tile loading issue in dynamically shown divs
             map.invalidateSize();
 
-            // Fetch coordinates
-            let currCoords = await getCoords(currPlace);
-            if (!currCoords) currCoords = await getCoords(fallbackCountry);
-
-            let prevCoords = null;
-            if (prevPlace) {
-                prevCoords = await getCoords(prevPlace);
-            }
+            let currCoords = (currLat && currLon) ? [currLat, currLon] : null;
+            let prevCoords = (prevLatStr && prevLonStr) ? [parseFloat(prevLatStr), parseFloat(prevLonStr)] : null;
 
             if (currCoords) {
-                L.marker(currCoords, {icon: dbIcon}).addTo(map);
-                
                 if (prevCoords) {
-                    L.marker(prevCoords, {icon: dbIcon}).addTo(map);
-                    // Draw Nimbus Trail (yellow/orange dashed line)
+                    L.marker(prevCoords, {icon: dbStartIcon, zIndexOffset: 1000}).addTo(map);
+                    L.marker(currCoords, {icon: dbEndIcon, zIndexOffset: 2000}).addTo(map);
+                    
                     L.polyline([prevCoords, currCoords], {
                         color: '#f1c40f',
                         weight: 4,
@@ -242,10 +232,10 @@
                         lineCap: 'round'
                     }).addTo(map);
                     
-                    // Fit bounds to show both points
                     const bounds = L.latLngBounds(prevCoords, currCoords);
                     map.fitBounds(bounds, {padding: [30, 30], maxZoom: 5});
                 } else {
+                    L.marker(currCoords, {icon: dbEndIcon}).addTo(map);
                     map.setView(currCoords, 4);
                 }
             }
@@ -259,8 +249,10 @@
                 
                 // Determine previous location for the flight path
                 const prevItem = index > 0 ? data[index - 1] : null;
-                const currPlace = `${item.landmark}, ${item.country}`;
-                const prevPlace = prevItem ? `${prevItem.landmark}, ${prevItem.country}` : '';
+                const lat = item.lat || 0;
+                const lon = item.lon || 0;
+                const prevLat = prevItem ? (prevItem.lat || 0) : '';
+                const prevLon = prevItem ? (prevItem.lon || 0) : '';
                 
                 const container = document.createElement('div');
                 container.className = 'card-container';
@@ -269,7 +261,6 @@
                 const imgSrc = 'images/' + item.filename;
                 const safeLandmark = item.landmark.replace(/'/g, "&apos;").replace(/"/g, "&quot;");
                 const safeCountry = item.country.replace(/'/g, "&apos;").replace(/"/g, "&quot;");
-                const safePrev = prevPlace.replace(/'/g, "&apos;").replace(/"/g, "&quot;");
                 const query = encodeURIComponent(item.landmark + ', ' + item.country);
                 const mapLink = item.mapLink || 'https://www.google.com/maps/search/?api=1&query=' + query;
                 const safeStory = item.story ? item.story.replace(/'/g, "&apos;").replace(/"/g, "&quot;") : '';
@@ -295,7 +286,7 @@
                         <!-- BACK (MAP) -->
                         <div class="card-back">
                             <h3 style="font-size:1.3em; margin-bottom:10px;">${item.country}</h3>
-                            <div id="map-${index}" class="map-wrapper" data-gmaps="${mapLink}" data-curr="${currPlace}" data-prev="${safePrev}" data-country="${safeCountry}"></div>
+                            <div id="map-${index}" class="map-wrapper" data-gmaps="${mapLink}" data-lat="${lat}" data-lon="${lon}" data-prev-lat="${prevLat}" data-prev-lon="${prevLon}"></div>
                             <a href="${mapLink}" target="_blank" class="gmaps-link">> Google Maps Satellite</a>
                             <button onclick="unflipCard(${index})" class="map-btn back-btn">↩️ Retour à l'image</button>
                         </div>
