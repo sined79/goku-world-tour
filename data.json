@@ -4,7 +4,7 @@
         "landmark": "La Grande Muraille de Chine",
         "filename": "image-1---9d39fb0e-f29d-466d-89b1-f0044a34095a.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=La%20Grande%20Muraille%20de%20Chine%2C%20Chine",
-        "story": "L'aventure commence ! Bulma a détecté une étrange énergie. Goku et Chi-Chi survolent la majestueuse Muraille de Chine sur le Nuage Magique, prêts pour un tour du monde !",
+        "story": "L'aventure commence ! Bulma a d\u00e9tect\u00e9 une \u00e9trange \u00e9nergie. Goku et Chi-Chi survolent la majestueuse Muraille de Chine sur le Nuage Magique, pr\u00eats pour un tour du monde !",
         "lat": 40.4319,
         "lon": 116.5704
     },
@@ -13,25 +13,25 @@
         "landmark": "Tour Eiffel",
         "filename": "image-1---7bf22532-14f5-4747-a1dc-3237994c854c.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Tour%20Eiffel%2C%20France",
-        "story": "Pause romantique à Paris ! Pendant que Chi-Chi admire la grande tour de fer, Goku se demande combien de baguettes de pain il pourrait avaler au déjeuner.",
+        "story": "Pause romantique \u00e0 Paris ! Pendant que Chi-Chi admire la grande tour de fer, Goku se demande combien de baguettes de pain il pourrait avaler au d\u00e9jeuner.",
         "lat": 48.8584,
         "lon": 2.2945
     },
     {
-        "country": "Égypte",
+        "country": "\u00c9gypte",
         "landmark": "Pyramides de Gizeh",
         "filename": "image-1---0dae250b-b053-4f7f-8d66-3e003325f954.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Pyramides%20de%20Gizeh%2C%20%C3%89gypte",
-        "story": "Une chaleur étouffante ! Goku cherche des indices sous le sable brûlant de Gizeh, espérant que les momies des pharaons ne vont pas se réveiller pour l'affronter.",
+        "story": "Une chaleur \u00e9touffante ! Goku cherche des indices sous le sable br\u00fblant de Gizeh, esp\u00e9rant que les momies des pharaons ne vont pas se r\u00e9veiller pour l'affronter.",
         "lat": 29.9792,
         "lon": 31.1342
     },
     {
-        "country": "États-Unis",
-        "landmark": "Statue de la Liberté",
+        "country": "\u00c9tats-Unis",
+        "landmark": "Statue de la Libert\u00e9",
         "filename": "image-1---a92cae8f-a2b9-4cfb-8c95-c53567c0d4d9.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Statue%20de%20la%20Libert%C3%A9%2C%20%C3%89tats-Unis",
-        "story": "Arrivée à New York ! Chi-Chi trouve la Statue de la Liberté très élégante, mais Goku scrute l'horizon pour trouver le plus grand stand de hot-dogs de la ville.",
+        "story": "Arriv\u00e9e \u00e0 New York ! Chi-Chi trouve la Statue de la Libert\u00e9 tr\u00e8s \u00e9l\u00e9gante, mais Goku scrute l'horizon pour trouver le plus grand stand de hot-dogs de la ville.",
         "lat": 40.6892,
         "lon": -74.0445
     },
@@ -40,25 +40,25 @@
         "landmark": "Mont Fuji",
         "filename": "image-1---e41bea4a-c672-4289-9776-cb232ef3b99a.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Mont%20Fuji%2C%20Japon",
-        "story": "Un peu de repos bien mérité au Japon. Les magnifiques cerisiers en fleurs rappellent le Mont Paozu à Chi-Chi, offrant un moment de pure paix au couple.",
+        "story": "Un peu de repos bien m\u00e9rit\u00e9 au Japon. Les magnifiques cerisiers en fleurs rappellent le Mont Paozu \u00e0 Chi-Chi, offrant un moment de pure paix au couple.",
         "lat": 35.3606,
         "lon": 138.7274
     },
     {
         "country": "Italie",
-        "landmark": "Colisée",
+        "landmark": "Colis\u00e9e",
         "filename": "image-1---5f282f9f-32b1-4549-8986-77debe5c1afd.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Colis%C3%A9e%2C%20Italie",
-        "story": "Goku est fasciné par l'immense Colisée de Rome. Il ferme les yeux et s'imagine déjà affronter les plus puissants gladiateurs de l'Antiquité dans l'arène !",
+        "story": "Goku est fascin\u00e9 par l'immense Colis\u00e9e de Rome. Il ferme les yeux et s'imagine d\u00e9j\u00e0 affronter les plus puissants gladiateurs de l'Antiquit\u00e9 dans l'ar\u00e8ne !",
         "lat": 41.8902,
         "lon": 12.4922
     },
     {
-        "country": "Brésil",
-        "landmark": "Christ Rédempteur",
+        "country": "Br\u00e9sil",
+        "landmark": "Christ R\u00e9dempteur",
         "filename": "image-1---87f72b7b-e189-41ee-85f0-f4db84900bb5.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Christ%20R%C3%A9dempteur%2C%20Br%C3%A9sil",
-        "story": "Surplombant Rio de Janeiro, l'énergie spirituelle est incroyable ! Goku salue l'immense statue du Christ Rédempteur avec un grand sourire radieux.",
+        "story": "Surplombant Rio de Janeiro, l'\u00e9nergie spirituelle est incroyable ! Goku salue l'immense statue du Christ R\u00e9dempteur avec un grand sourire radieux.",
         "lat": -22.9519,
         "lon": -43.2105
     },
@@ -67,16 +67,16 @@
         "landmark": "Taj Mahal",
         "filename": "image-1---f5574f62-f4a3-45ad-9fe3-170d8941ba8e.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Taj%20Mahal%2C%20Inde",
-        "story": "Chi-Chi est totalement émerveillée par la beauté sculptée du Taj Mahal. Un cadre romantique et paisible, parfait pour notre duo de combattants.",
+        "story": "Chi-Chi est totalement \u00e9merveill\u00e9e par la beaut\u00e9 sculpt\u00e9e du Taj Mahal. Un cadre romantique et paisible, parfait pour notre duo de combattants.",
         "lat": 27.1751,
         "lon": 78.0421
     },
     {
         "country": "Australie",
-        "landmark": "Opéra de Sydney",
+        "landmark": "Op\u00e9ra de Sydney",
         "filename": "image-1---53fae0e9-a0fc-4f11-a224-10ccb568e09e.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Op%C3%A9ra%20de%20Sydney%2C%20Australie",
-        "story": "L'océan à perte de vue ! Goku a failli plonger pour s'entraîner avec les requins, mais Chi-Chi l'a forcé à rester sec pour admirer le célèbre Opéra de Sydney.",
+        "story": "L'oc\u00e9an \u00e0 perte de vue ! Goku a failli plonger pour s'entra\u00eener avec les requins, mais Chi-Chi l'a forc\u00e9 \u00e0 rester sec pour admirer le c\u00e9l\u00e8bre Op\u00e9ra de Sydney.",
         "lat": -33.8568,
         "lon": 151.2153
     },
@@ -85,24 +85,24 @@
         "landmark": "Big Ben",
         "filename": "image-1---b349737e-8fab-4148-823a-feed457d4add.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Big%20Ben%2C%20Royaume-Uni",
-        "story": "Il est l'heure ! Big Ben sonne à travers Londres pendant que le radar s'affole. Un trésor serait-il caché tout en haut de la grande horloge ?",
+        "story": "Il est l'heure ! Big Ben sonne \u00e0 travers Londres pendant que le radar s'affole. Un tr\u00e9sor serait-il cach\u00e9 tout en haut de la grande horloge ?",
         "lat": 51.5007,
         "lon": -0.1246
     },
     {
-        "country": "Pérou",
+        "country": "P\u00e9rou",
         "landmark": "Machu Picchu",
         "filename": "image-1---62d3f38c-627f-40e9-8c1f-c2f0dfccace3.jpg",
         "mapLink": "https://www.google.com/maps/search/?api=1&query=Machu%20Picchu%2C%20P%C3%A9rou",
-        "story": "Une cité perdue dans les nuages ! Goku grimpe les immenses marches incas du Machu Picchu en quelques bonds, portant Chi-Chi sur son dos pour aller plus vite.",
+        "story": "Une cit\u00e9 perdue dans les nuages ! Goku grimpe les immenses marches incas du Machu Picchu en quelques bonds, portant Chi-Chi sur son dos pour aller plus vite.",
         "lat": -13.1631,
         "lon": -72.545
     },
     {
-        "country": "Grèce",
-        "landmark": "Acropole d'Athènes",
+        "country": "Gr\u00e8ce",
+        "landmark": "Acropole d'Ath\u00e8nes",
         "filename": "image-1---6f2c2a9b-03ed-46ee-be57-310008271b25.jpg",
-        "story": "Le berceau des dieux ! Goku scrute les colonnes de l'Acropole, se demandant si les divinités grecques sont aussi fortes que Maître Kaio.",
+        "story": "Le berceau des dieux ! Goku scrute les colonnes de l'Acropole, se demandant si les divinit\u00e9s grecques sont aussi fortes que Ma\u00eetre Kaio.",
         "lat": 37.9715,
         "lon": 23.7257
     },
@@ -110,7 +110,7 @@
         "country": "Canada",
         "landmark": "Chutes du Niagara",
         "filename": "image-1---d415a64a-c7e4-4aad-81fd-28e536ad8a05.jpg",
-        "story": "Quel vacarme ! La puissance des chutes d'eau impressionne Goku, qui envisage sérieusement de méditer sous le torrent glacial.",
+        "story": "Quel vacarme ! La puissance des chutes d'eau impressionne Goku, qui envisage s\u00e9rieusement de m\u00e9diter sous le torrent glacial.",
         "lat": 43.0896,
         "lon": -79.0849
     },
@@ -118,23 +118,23 @@
         "country": "Mexique",
         "landmark": "Chichen Itza",
         "filename": "image-1---4bbde2ba-ff8a-46bb-b1fd-e2307fbdf03f.jpg",
-        "story": "Face à la pyramide maya, Chi-Chi déchiffre d'anciennes légendes tandis que Goku espère y trouver un passage secret vers un nouveau monde.",
+        "story": "Face \u00e0 la pyramide maya, Chi-Chi d\u00e9chiffre d'anciennes l\u00e9gendes tandis que Goku esp\u00e8re y trouver un passage secret vers un nouveau monde.",
         "lat": 20.6843,
         "lon": -88.5678
     },
     {
         "country": "Turquie",
-        "landmark": "Montgolfières en Cappadoce",
+        "landmark": "Montgolfi\u00e8res en Cappadoce",
         "filename": "image-1---4c30f6d7-866c-489b-aef6-64416af79fa3.jpg",
-        "story": "Le ciel est rempli de montgolfières multicolores ! Goku propose de faire la course avec le Nuage Magique, mais Chi-Chi préfère profiter du paysage en douceur.",
+        "story": "Le ciel est rempli de montgolfi\u00e8res multicolores ! Goku propose de faire la course avec le Nuage Magique, mais Chi-Chi pr\u00e9f\u00e8re profiter du paysage en douceur.",
         "lat": 38.6431,
         "lon": 34.83
     },
     {
-        "country": "Émirats Arabes Unis",
-        "landmark": "Burj Khalifa à Dubaï",
+        "country": "\u00c9mirats Arabes Unis",
+        "landmark": "Burj Khalifa \u00e0 Duba\u00ef",
         "filename": "image-1---7e519f7e-8784-4306-9b96-881ec3037f87.jpg",
-        "story": "Plus haut que la Tour Karine ! Goku regarde le sommet du Burj Khalifa et parie qu'il peut l'escalader à mains nues avant le dîner.",
+        "story": "Plus haut que la Tour Karine ! Goku regarde le sommet du Burj Khalifa et parie qu'il peut l'escalader \u00e0 mains nues avant le d\u00eener.",
         "lat": 25.1972,
         "lon": 55.2744
     },
@@ -142,7 +142,7 @@
         "country": "Russie",
         "landmark": "Place Rouge de Moscou",
         "filename": "goku_russia---53eaf18b-4c44-4af9-b0cb-aa755c28d532.jpg",
-        "story": "Il fait un froid de canard à Moscou ! Chi-Chi a prévu les manteaux d'hiver, pendant que Goku admire l'architecture colorée de la cathédrale.",
+        "story": "Il fait un froid de canard \u00e0 Moscou ! Chi-Chi a pr\u00e9vu les manteaux d'hiver, pendant que Goku admire l'architecture color\u00e9e de la cath\u00e9drale.",
         "lat": 55.7539,
         "lon": 37.6208
     },
@@ -150,7 +150,7 @@
         "country": "Espagne",
         "landmark": "Sagrada Familia de Barcelone",
         "filename": "image-1---ea0fc477-9ffe-4f93-a573-25ce3a3d8181.jpg",
-        "story": "Une construction qui n'en finit jamais ! Goku trouve la Sagrada Familia magnifique, mais a du mal à comprendre pourquoi les artisans ne volent pas pour poser les pierres.",
+        "story": "Une construction qui n'en finit jamais ! Goku trouve la Sagrada Familia magnifique, mais a du mal \u00e0 comprendre pourquoi les artisans ne volent pas pour poser les pierres.",
         "lat": 41.4036,
         "lon": 2.1744
     },
@@ -158,24 +158,32 @@
         "country": "Cambodge",
         "landmark": "Angkor Wat",
         "filename": "image-1---a1f533aa-e43e-41e8-8f43-23e3c0268c4b.jpg",
-        "story": "La jungle a repris ses droits sur ces temples anciens. Un décor parfait pour un entraînement secret loin des regards indiscrets.",
+        "story": "La jungle a repris ses droits sur ces temples anciens. Un d\u00e9cor parfait pour un entra\u00eenement secret loin des regards indiscrets.",
         "lat": 13.4125,
         "lon": 103.867
     },
     {
         "country": "Jordanie",
-        "landmark": "Cité de Pétra",
+        "landmark": "Cit\u00e9 de P\u00e9tra",
         "filename": "image-1---f55be85f-ddca-4ef8-9a49-fe9bd514ab57.jpg",
-        "story": "Une cité taillée directement dans la roche rouge ! Chi-Chi prend des photos souvenirs alors que Goku s'engouffre dans le canyon à toute vitesse.",
+        "story": "Une cit\u00e9 taill\u00e9e directement dans la roche rouge ! Chi-Chi prend des photos souvenirs alors que Goku s'engouffre dans le canyon \u00e0 toute vitesse.",
         "lat": 30.3285,
         "lon": 35.4444
     },
     {
-        "country": "Thaïlande",
+        "country": "Tha\u00eflande",
         "landmark": "Grand Palais de Bangkok",
         "filename": "image-1---86bf0b7b-c9e2-4976-a108-dbcb58323328.jpg",
-        "story": "Que d'or et d'éclat ! Goku et Chi-Chi visitent les sanctuaires scintillants de Bangkok, imprégnés d'une spiritualité apaisante.",
+        "story": "Que d'or et d'\u00e9clat ! Goku et Chi-Chi visitent les sanctuaires scintillants de Bangkok, impr\u00e9gn\u00e9s d'une spiritualit\u00e9 apaisante.",
         "lat": 13.75,
         "lon": 100.4913
+    },
+    {
+        "country": "Madagascar",
+        "landmark": "All\u00e9e des Baobabs",
+        "filename": "image-1---584e2bdf-699a-4ea7-a050-e44bdcae60ae.jpg",
+        "story": "Des arbres g\u00e9ants qui semblent toucher le ciel ! Goku essaie d'en enlacer un, mais le tronc du baobab est bien trop large, m\u00eame pour lui.",
+        "lat": -20.251,
+        "lon": 44.4187
     }
 ]
