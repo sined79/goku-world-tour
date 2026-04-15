@@ -185,5 +185,13 @@
         "story": "Des arbres g\u00e9ants qui semblent toucher le ciel ! Goku essaie d'en enlacer un, mais le tronc du baobab est bien trop large, m\u00eame pour lui.",
         "lat": -20.251,
         "lon": 44.4187
+    },
+    {
+        "country": "Argentine",
+        "landmark": "Chutes d'Iguaz\u00fa",
+        "filename": "image-1---fb32d4d8-64b8-4987-9b9a-b3b512b5c2d8.jpg",
+        "story": "La nature \u00e0 l'\u00e9tat brut ! Les arcs-en-ciel se forment au-dessus des cascades, offrant \u00e0 notre couple un panorama d'une beaut\u00e9 \u00e9poustouflante.",
+        "lat": -25.6953,
+        "lon": -54.4367
     }
 ]
