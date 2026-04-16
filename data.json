@@ -241,5 +241,13 @@
         "story": "Des milliers de pitons rocheux jaillissent de la mer \u00e9meraude. Goku et Chi-Chi naviguent doucement sur une barque traditionnelle.",
         "lat": 20.8997,
         "lon": 107.0396
+    },
+    {
+        "country": "Cor\u00e9e du Sud",
+        "landmark": "Palais Gyeongbokgung",
+        "filename": "image-1---c1854f83-132b-4b01-ae81-38ec9ea3ccc6.jpg",
+        "story": "V\u00eatus de hanboks traditionnels, notre duo se fond dans le d\u00e9cor majestueux du palais royal de S\u00e9oul pour une pause culturelle.",
+        "lat": 37.5796,
+        "lon": 126.977
     }
 ]
