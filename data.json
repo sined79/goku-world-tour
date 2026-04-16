@@ -217,5 +217,13 @@
         "story": "Un oc\u00e9an de sable dor\u00e9 sous un soleil de plomb. Chi-Chi guide leur marche pour ne pas se perdre, tandis que Goku court partout.",
         "lat": 31.0801,
         "lon": -3.982
+    },
+    {
+        "country": "Tanzanie",
+        "landmark": "Mont Kilimandjaro",
+        "filename": "image-1---3154e729-0692-457f-8a50-ab60aa1c9233.jpg",
+        "story": "Le toit de l'Afrique ! Goku s'est amus\u00e9 \u00e0 grimper jusqu'au sommet enneig\u00e9 en un \u00e9clair pour rapporter une fleur de glace \u00e0 Chi-Chi.",
+        "lat": -3.0674,
+        "lon": 37.3556
     }
 ]
