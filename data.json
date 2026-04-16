@@ -209,5 +209,13 @@
         "story": "Une vue imprenable sur l'oc\u00e9an depuis ce sommet tout plat. Goku s'assoit au bord du pr\u00e9cipice pour ressentir les flux d'\u00e9nergie de la nature.",
         "lat": -33.9628,
         "lon": 18.4098
+    },
+    {
+        "country": "Maroc",
+        "landmark": "Dunes du Sahara",
+        "filename": "image-1---3294bc3d-a276-4491-91eb-9626efa83988.jpg",
+        "story": "Un oc\u00e9an de sable dor\u00e9 sous un soleil de plomb. Chi-Chi guide leur marche pour ne pas se perdre, tandis que Goku court partout.",
+        "lat": 31.0801,
+        "lon": -3.982
     }
 ]
