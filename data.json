@@ -201,5 +201,13 @@
         "story": "Des maisons creus\u00e9es dans les collines vertes ? Goku adore l'ambiance, surtout quand il apprend que les habitants d'ici font six repas par jour !",
         "lat": -37.872,
         "lon": 175.6829
+    },
+    {
+        "country": "Afrique du Sud",
+        "landmark": "Montagne de la Table",
+        "filename": "image-1---48eeced0-ad0d-414b-b31a-65bc5d36abd2.jpg",
+        "story": "Une vue imprenable sur l'oc\u00e9an depuis ce sommet tout plat. Goku s'assoit au bord du pr\u00e9cipice pour ressentir les flux d'\u00e9nergie de la nature.",
+        "lat": -33.9628,
+        "lon": 18.4098
     }
 ]
