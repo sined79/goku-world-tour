@@ -233,5 +233,13 @@
         "story": "Une atmosph\u00e8re magique flotte autour de ces temples. Goku se concentre sur les vagues, sentant la puissance paisible de l'oc\u00e9an balinais.",
         "lat": -8.6212,
         "lon": 115.0868
+    },
+    {
+        "country": "Vietnam",
+        "landmark": "Baie de H\u1ea1 Long",
+        "filename": "image-1---57c72f26-3da2-461a-8cf6-2ff89261c486.jpg",
+        "story": "Des milliers de pitons rocheux jaillissent de la mer \u00e9meraude. Goku et Chi-Chi naviguent doucement sur une barque traditionnelle.",
+        "lat": 20.8997,
+        "lon": 107.0396
     }
 ]
