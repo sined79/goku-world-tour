@@ -281,5 +281,13 @@
         "story": "Des moulins \u00e0 vent align\u00e9s le long des canaux. Goku essaie de comprendre la m\u00e9canique en regardant les immenses pales tourner.",
         "lat": 51.8833,
         "lon": 4.6333
+    },
+    {
+        "country": "Belgique",
+        "landmark": "L'Atomium de Bruxelles",
+        "filename": "image-1---2793a021-61b2-42b2-9988-4c5f33c7eed9.jpg",
+        "story": "De retour pr\u00e8s de chez Denis ! Goku est fascin\u00e9 par cette structure atomique g\u00e9ante \u00e0 Bruxelles et se demande si elle cache une r\u00e9serve d'\u00e9nergie secr\u00e8te.",
+        "lat": 50.8949,
+        "lon": 4.3415
     }
 ]
