@@ -273,5 +273,13 @@
         "story": "Des falaises vertigineuses et une eau bleu profond. Goku observe les aigles voler, impressionn\u00e9 par la grandeur silencieuse du fjord.",
         "lat": 62.1015,
         "lon": 7.0941
+    },
+    {
+        "country": "Pays-Bas",
+        "landmark": "Moulins de Kinderdijk",
+        "filename": "image-1---963d831d-ac25-428a-938f-a3957da5c84b.jpg",
+        "story": "Des moulins \u00e0 vent align\u00e9s le long des canaux. Goku essaie de comprendre la m\u00e9canique en regardant les immenses pales tourner.",
+        "lat": 51.8833,
+        "lon": 4.6333
     }
 ]
