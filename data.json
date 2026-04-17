@@ -265,5 +265,13 @@
         "story": "Des sommets ac\u00e9r\u00e9s et de la neige poudreuse ! Goku adore le froid alpin, c'est l'endroit r\u00eav\u00e9 pour endurcir son corps.",
         "lat": 45.9763,
         "lon": 7.6586
+    },
+    {
+        "country": "Norv\u00e8ge",
+        "landmark": "Geirangerfjord",
+        "filename": "image-1---23edde82-0317-499e-8b78-5a9edda78330.jpg",
+        "story": "Des falaises vertigineuses et une eau bleu profond. Goku observe les aigles voler, impressionn\u00e9 par la grandeur silencieuse du fjord.",
+        "lat": 62.1015,
+        "lon": 7.0941
     }
 ]
