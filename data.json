@@ -337,5 +337,13 @@
         "story": "Entour\u00e9s d'animaux sauvages, notre couple observe la grande migration. Goku a promis \u00e0 Chi-Chi de ne d\u00e9fier aucun lion aujourd'hui.",
         "lat": -1.49,
         "lon": 34.8554
+    },
+    {
+        "country": "Antarctique",
+        "landmark": "Glacier de Ross",
+        "filename": "image-1---a84bc87f-9d6b-41e4-a9ec-c0cf4344549d.jpg",
+        "story": "Le bout du monde ! Au milieu des immenses glaciers blancs, l'\u00e9nergie est pure. Une \u00e9tape glaciale mais inoubliable pour cl\u00f4turer cette exp\u00e9dition plan\u00e9taire.",
+        "lat": -79.0,
+        "lon": -170.0
     }
 ]
