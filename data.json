@@ -329,5 +329,13 @@
         "story": "Le ciel nocturne s'illumine de vagues vertes et violettes. Un spectacle c\u00e9leste si beau qu'il laisse m\u00eame Goku sans voix.",
         "lat": 64.2556,
         "lon": -21.1296
+    },
+    {
+        "country": "Kenya",
+        "landmark": "Savane du Serengeti",
+        "filename": "image-1---0ce6d654-d0ed-455e-a4e1-38da6e721a0d.jpg",
+        "story": "Entour\u00e9s d'animaux sauvages, notre couple observe la grande migration. Goku a promis \u00e0 Chi-Chi de ne d\u00e9fier aucun lion aujourd'hui.",
+        "lat": -1.49,
+        "lon": 34.8554
     }
 ]
