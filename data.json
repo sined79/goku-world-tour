@@ -321,5 +321,13 @@
         "story": "L'heure du vrai repos ! Eau turquoise et sable blanc, Goku s'essaie \u00e0 la plong\u00e9e sous-marine pendant que Chi-Chi bronze tranquillement.",
         "lat": 3.2028,
         "lon": 73.2207
+    },
+    {
+        "country": "Islande",
+        "landmark": "Aurores Bor\u00e9ales",
+        "filename": "image-1---e813757a-aff5-46c4-8e60-f504fdd24cb6.jpg",
+        "story": "Le ciel nocturne s'illumine de vagues vertes et violettes. Un spectacle c\u00e9leste si beau qu'il laisse m\u00eame Goku sans voix.",
+        "lat": 64.2556,
+        "lon": -21.1296
     }
 ]
