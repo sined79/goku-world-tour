@@ -305,5 +305,13 @@
         "story": "Perch\u00e9 sur sa colline, ce palais aux couleurs vives amuse beaucoup Goku. Chi-Chi, elle, est charm\u00e9e par le romantisme magique des lieux.",
         "lat": 38.7876,
         "lon": -9.3906
+    },
+    {
+        "country": "Bolivie",
+        "landmark": "Salar d'Uyuni",
+        "filename": "image-1---5b158a33-1942-4b0f-9b99-cfeb789dcb68.jpg",
+        "story": "Le plus grand miroir du monde ! Le sol de sel refl\u00e8te le ciel \u00e0 la perfection, donnant l'impression \u00e0 Goku et Chi-Chi de marcher sur les nuages.",
+        "lat": -20.1338,
+        "lon": -67.4891
     }
 ]
