@@ -361,5 +361,13 @@
         "story": "Promenade dans les rues color\u00e9es de Stockholm. Chi-Chi admire l'architecture nordique.",
         "lat": 59.3256,
         "lon": 18.071
+    },
+    {
+        "country": "Danemark",
+        "landmark": "La Petite Sir\u00e8ne",
+        "filename": "image-1---a0abdc61-1324-4dc6-b441-c03d3630b90e.jpg",
+        "story": "Goku se demande si cette sir\u00e8ne est amie avec Tortue G\u00e9niale, pendant que Chi-Chi prend une photo souvenir.",
+        "lat": 55.6928,
+        "lon": 12.5992
     }
 ]
