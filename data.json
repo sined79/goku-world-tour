@@ -345,5 +345,13 @@
         "story": "Le bout du monde ! Au milieu des immenses glaciers blancs, l'\u00e9nergie est pure. Une \u00e9tape glaciale mais inoubliable pour cl\u00f4turer cette exp\u00e9dition plan\u00e9taire.",
         "lat": -79.0,
         "lon": -170.0
+    },
+    {
+        "country": "Autriche",
+        "landmark": "Palais de Sch\u00f6nbrunn",
+        "filename": "image-1---cc748b76-d579-489d-a120-ac3a3e629ac1.jpg",
+        "story": "Goku et Chi-Chi font une pause royale \u00e0 Vienne. Goku est surtout int\u00e9ress\u00e9 par les cuisines du palais !",
+        "lat": 48.1848,
+        "lon": 16.3122
     }
 ]
