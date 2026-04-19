@@ -385,5 +385,13 @@
         "story": "Le vent souffle fort sur les c\u00f4tes irlandaises. Goku est fascin\u00e9 par la hauteur des falaises face \u00e0 l'oc\u00e9an.",
         "lat": 52.9715,
         "lon": -9.4265
+    },
+    {
+        "country": "\u00c9cosse",
+        "landmark": "Ch\u00e2teau d'\u00c9dimbourg",
+        "filename": "image-1---4c62d635-5e84-4c0b-b52c-b7c42a39aff4.jpg",
+        "story": "Un ch\u00e2teau majestueux ! Goku cherche s'il y a un dojo cach\u00e9, tandis que Chi-Chi appr\u00e9cie l'histoire des lieux.",
+        "lat": 55.9486,
+        "lon": -3.1999
     }
 ]
