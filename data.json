@@ -353,5 +353,13 @@
         "story": "Goku et Chi-Chi font une pause royale \u00e0 Vienne. Goku est surtout int\u00e9ress\u00e9 par les cuisines du palais !",
         "lat": 48.1848,
         "lon": 16.3122
+    },
+    {
+        "country": "Su\u00e8de",
+        "landmark": "Vieux Stand (Gamla Stan)",
+        "filename": "image-1---f49f1341-77f4-4a96-a2aa-53d360cf0ddd.jpg",
+        "story": "Promenade dans les rues color\u00e9es de Stockholm. Chi-Chi admire l'architecture nordique.",
+        "lat": 59.3256,
+        "lon": 18.071
     }
 ]
