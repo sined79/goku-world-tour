@@ -377,5 +377,13 @@
         "story": "Il fait froid en Laponie ! Goku esp\u00e8re croiser le P\u00e8re No\u00ebl pour lui demander un festin en cadeau.",
         "lat": 66.5434,
         "lon": 25.8481
+    },
+    {
+        "country": "Irlande",
+        "landmark": "Falaises de Moher",
+        "filename": "image-1---225980ba-846f-4c1f-9530-e2c81cbb699b.jpg",
+        "story": "Le vent souffle fort sur les c\u00f4tes irlandaises. Goku est fascin\u00e9 par la hauteur des falaises face \u00e0 l'oc\u00e9an.",
+        "lat": 52.9715,
+        "lon": -9.4265
     }
 ]
