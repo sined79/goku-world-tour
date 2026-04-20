@@ -409,5 +409,13 @@
         "story": "Promenade romantique \u00e0 Prague. Chi-Chi est aux anges, m\u00eame si Goku surveille les statues d'un \u0153il curieux.",
         "lat": 50.0865,
         "lon": 14.4114
+    },
+    {
+        "country": "Hongrie",
+        "landmark": "Parlement de Budapest",
+        "filename": "image-1---62fff44b-8699-4534-b9ab-70001bedeed7.jpg",
+        "story": "Un b\u00e2timent impressionnant au bord du Danube. Le Nuage Magique survole tranquillement le fleuve.",
+        "lat": 47.5071,
+        "lon": 19.0456
     }
 ]
