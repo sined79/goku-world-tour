@@ -417,5 +417,13 @@
         "story": "Un b\u00e2timent impressionnant au bord du Danube. Le Nuage Magique survole tranquillement le fleuve.",
         "lat": 47.5071,
         "lon": 19.0456
+    },
+    {
+        "country": "Roumanie",
+        "landmark": "Ch\u00e2teau de Bran",
+        "filename": "image-1---3125ea3e-113d-4d95-bd34-a338d971af2d.jpg",
+        "story": "Goku n'a pas peur des vampires, il se demande juste si Dracula \u00e9tait fort au combat !",
+        "lat": 45.5149,
+        "lon": 25.3672
     }
 ]
