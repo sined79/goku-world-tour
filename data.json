@@ -393,5 +393,13 @@
         "story": "Un ch\u00e2teau majestueux ! Goku cherche s'il y a un dojo cach\u00e9, tandis que Chi-Chi appr\u00e9cie l'histoire des lieux.",
         "lat": 55.9486,
         "lon": -3.1999
+    },
+    {
+        "country": "Pologne",
+        "landmark": "Place du March\u00e9 de Cracovie",
+        "filename": "image-1---93f5f018-5e02-49b2-8985-fb6cc0dddb87.jpg",
+        "story": "Une belle place anim\u00e9e. Goku suit l'odeur des sp\u00e9cialit\u00e9s locales avec enthousiasme.",
+        "lat": 50.0614,
+        "lon": 19.9372
     }
 ]
