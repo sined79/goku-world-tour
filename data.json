@@ -441,5 +441,13 @@
         "story": "Goku et Chi-Chi explorent cette ancienne forteresse qui surplombe le confluent de deux grands fleuves.",
         "lat": 44.8236,
         "lon": 20.4505
+    },
+    {
+        "country": "Bulgarie",
+        "landmark": "Monast\u00e8re de Rila",
+        "filename": "image-1---3da0e286-dcb5-465e-a7b1-f03976122b5d.jpg",
+        "story": "Un lieu paisible cach\u00e9 dans les montagnes. Chi-Chi en profite pour se ressourcer.",
+        "lat": 42.1333,
+        "lon": 23.3402
     }
 ]
