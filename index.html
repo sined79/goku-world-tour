@@ -55,7 +55,7 @@
             text-overflow: ellipsis;
         }
         .header-logo:hover { opacity: 0.85; }
-        .header-logo-emoji { font-size: 1.3em; flex-shrink: 0; }
+        .header-logo-emoji { font-size: 1.45em; flex-shrink: 0; line-height: 1; }
 
         /* ===== INTRO BLOCK (normal flow, scrolls with page) ===== */
         .intro-block {
@@ -234,6 +234,7 @@
             white-space: nowrap;
         }
         .arrow-icon { color: var(--primary); }
+        .stage-right { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 
         /* World map tooltip */
         .world-map-tooltip {
@@ -372,7 +373,7 @@
     <nav class="navbar" id="top">
         <!-- Left: clickable title -->
         <a href="#" class="header-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Retour en haut de la page">
-            🌍 Goku &amp; Chi-Chi
+            <span class="header-logo-emoji">🌍</span> Goku &amp; Chi-Chi
         </a>
 
         <!-- Right: burger button -->
@@ -601,7 +602,10 @@
             arrow.className = 'arrow-icon';
             arrow.textContent = '→';
 
-            a.append(badge, cname, lname, arrow);
+            const stageRight = document.createElement('span');
+            stageRight.className = 'stage-right';
+            stageRight.append(lname, arrow);
+            a.append(badge, cname, stageRight);
             li.appendChild(a);
             list.appendChild(li);
         });
