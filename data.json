@@ -457,5 +457,13 @@
         "story": "Une architecture dor\u00e9e magnifique. Nos h\u00e9ros admirent la beaut\u00e9 spirituelle du lieu.",
         "lat": 50.4346,
         "lon": 30.5574
+    },
+    {
+        "country": "Estonie",
+        "landmark": "Vieille ville de Tallinn",
+        "filename": "image-1---d0a26cdf-1a83-4dfa-9ed0-60b9296327e2.jpg",
+        "story": "Un voyage dans le temps ! L'ambiance m\u00e9di\u00e9vale charme totalement Chi-Chi.",
+        "lat": 59.437,
+        "lon": 24.7535
     }
 ]
