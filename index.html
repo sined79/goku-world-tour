@@ -392,7 +392,10 @@
         document.getElementById('burgerBtn').setAttribute('aria-expanded', 'true');
         document.getElementById('sideDrawer').classList.add('open');
         document.getElementById('drawerOverlay').classList.add('open');
-        if (!worldOverviewMap) setTimeout(initWorldOverviewMap, 250);
+        // Wait for the drawer slide-in animation (380ms) to complete before initialising
+        // the map; otherwise Leaflet measures a zero-size container and tiles never load.
+        if (!worldOverviewMap) setTimeout(initWorldOverviewMap, 420);
+        else setTimeout(() => worldOverviewMap.invalidateSize(), 420);
     }
 
     function closeBurgerMenu() {
@@ -446,7 +449,8 @@
             .then(geojson => {
                 worldGeoLayer = L.geoJSON(geojson, {
                     style: feature => {
-                        const iso = feature.properties.ISO_A2;
+                        // The datasets/geo-countries GeoJSON uses 'ISO3166-1-Alpha-2', NOT 'ISO_A2'
+                        const iso = feature.properties['ISO3166-1-Alpha-2'];
                         const visited = visitedISO.has(iso);
                         return {
                             fillColor: visited ? '#FF7300' : '#cddbe8',
@@ -456,13 +460,14 @@
                         };
                     },
                     onEachFeature: (feature, layer) => {
-                        const iso = feature.properties.ISO_A2;
+                        // The datasets/geo-countries GeoJSON uses 'ISO3166-1-Alpha-2', NOT 'ISO_A2'
+                        const iso = feature.properties['ISO3166-1-Alpha-2'];
                         if (!visitedISO.has(iso)) return;
 
                         const firstIdx = isoToFirstIndex[iso];
                         const allIdx = isoToAllIndices[iso];
                         const item = appData[firstIdx];
-                        const countryLabel = item ? item.country : (feature.properties.ADMIN || iso);
+                        const countryLabel = item ? item.country : (feature.properties.name || iso);
                         const stepLabels = allIdx.map(i => 'Étape ' + (i + 1)).join(' &amp; ');
 
                         layer.bindTooltip(
@@ -480,7 +485,9 @@
                     }
                 }).addTo(worldOverviewMap);
 
+                // Force Leaflet to recompute map size now that the drawer is fully open
                 worldOverviewMap.invalidateSize();
+                setTimeout(() => worldOverviewMap.invalidateSize(), 100);
             })
             .catch(() => {
                 // Fallback: circle markers
@@ -493,6 +500,7 @@
                     m.on('click', () => { closeBurgerMenu(); setTimeout(() => navigateToStep(idx), 400); });
                 });
                 worldOverviewMap.invalidateSize();
+                setTimeout(() => worldOverviewMap.invalidateSize(), 100);
             });
     }
 
