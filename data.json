@@ -465,5 +465,13 @@
         "story": "Un voyage dans le temps ! L'ambiance m\u00e9di\u00e9vale charme totalement Chi-Chi.",
         "lat": 59.437,
         "lon": 24.7535
+    },
+    {
+        "country": "Lettonie",
+        "landmark": "Maison des T\u00eates Noires",
+        "filename": "image-1---5e13a83e-adae-48ba-a82a-ec5b5a64cda6.jpg",
+        "story": "Une fa\u00e7ade tr\u00e8s color\u00e9e \u00e0 Riga. Goku pense que le nom ferait un bon titre pour une \u00e9quipe d'arts martiaux.",
+        "lat": 56.9475,
+        "lon": 24.1068
     }
 ]
