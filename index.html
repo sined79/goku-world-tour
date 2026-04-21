@@ -125,7 +125,7 @@
             width: 460px;
             max-width: 95vw;
             height: 100%;
-            background: #fff;
+            background: #1A1A2E;
             z-index: 9999;
             box-shadow: -6px 0 30px rgba(0,0,0,0.25);
             transition: right 0.38s cubic-bezier(0.4, 0, 0.2, 1);
@@ -136,15 +136,16 @@
         .side-drawer.open { right: 0; }
 
         .drawer-header {
-            background: var(--secondary);
+            background: #2D2D44;
             color: white;
             padding: 18px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-shrink: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .drawer-header h2 { margin: 0; font-size: 1.3em; color: #FFA502; }
+        .drawer-header h2 { margin: 0; font-size: 1.3em; color: #FFFFFF; }
         .drawer-close {
             background: rgba(255,255,255,0.15);
             border: none;
@@ -202,20 +203,21 @@
             margin: 0;
             padding: 0;
         }
-        .country-list li { border-bottom: 1px solid #f0f0f0; }
+        .country-list li { border-bottom: 1px solid rgba(255,255,255,0.07); }
         .country-list li a {
             display: flex;
             align-items: center;
             gap: 12px;
             padding: 11px 20px;
             text-decoration: none;
-            color: #333;
+            color: #FFFFFF;
+            background: #2D2D44;
             transition: background 0.15s;
             font-size: 0.98em;
         }
-        .country-list li a:hover { background: #fff4ec; color: var(--primary); }
+        .country-list li a:hover { background: #3a3a5a; color: #FFFFFF; }
         .step-badge {
-            background: var(--secondary);
+            background: #FF7300;
             color: white;
             font-size: 0.75em;
             font-weight: bold;
@@ -227,7 +229,7 @@
         .country-name { font-weight: bold; margin-left: 8px; text-align: left; }
         .landmark-name {
             font-size: 0.8em;
-            color: #999;
+            color: rgba(255,255,255,0.6);
             max-width: 150px;
             overflow: hidden;
             text-overflow: ellipsis;
