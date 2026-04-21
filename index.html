@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goku & Chi-Chi autour du monde !</title>
-    <!-- Leaflet CSS pour la carte OpenStreetMap -->
+    <title>Goku &amp; Chi-Chi autour du monde !</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         :root {
@@ -13,20 +12,23 @@
             --bg: #F0F3F4;
         }
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Comic Sans MS', 'Nunito', sans-serif; 
-            background: var(--bg); 
-            text-align: center; 
-            color: #333; 
+        body {
+            font-family: 'Comic Sans MS', 'Nunito', sans-serif;
+            background: var(--bg);
+            text-align: center;
+            color: #333;
             margin: 0;
             padding: 0;
         }
+
+        /* ===== HEADER ===== */
         .header {
             background: var(--secondary);
             color: white;
             padding: 40px 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             margin-bottom: 40px;
+            position: relative;
         }
         h1 { color: #FFA502; font-size: 3em; margin: 0 0 15px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
         .description { max-width: 900px; margin: 0 auto; font-size: 1.2em; line-height: 1.6; }
@@ -37,64 +39,224 @@
         }
         .latest-btn-header:hover { transform: scale(1.05); }
 
-        /* Structure Flip Card */
-        .gallery { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
-            max-width: 1300px; 
-            margin: auto; 
+        /* ===== BURGER BUTTON ===== */
+        .burger-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 0;
+            transition: background 0.2s, transform 0.2s;
+            z-index: 100;
+        }
+        .burger-btn:hover { background: rgba(255,255,255,0.3); transform: scale(1.08); }
+        .burger-btn span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .burger-btn.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .burger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .burger-btn.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+        /* ===== SIDE DRAWER ===== */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 9998;
+            display: none;
+            backdrop-filter: blur(2px);
+        }
+        .drawer-overlay.open { display: block; }
+        .side-drawer {
+            position: fixed;
+            top: 0;
+            right: -480px;
+            width: 460px;
+            max-width: 95vw;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+            box-shadow: -6px 0 30px rgba(0,0,0,0.25);
+            transition: right 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .side-drawer.open { right: 0; }
+
+        .drawer-header {
+            background: var(--secondary);
+            color: white;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .drawer-header h2 { margin: 0; font-size: 1.3em; color: #FFA502; }
+        .drawer-close {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            font-size: 1.4em;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .drawer-close:hover { background: rgba(255,255,255,0.3); }
+
+        .drawer-stats {
+            background: linear-gradient(135deg, var(--primary), #c85800);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #world-overview-map {
+            width: 100%;
+            height: 300px;
+            flex-shrink: 0;
+            background: #b8d8e8;
+        }
+
+        .drawer-section-title {
+            padding: 10px 20px 8px;
+            font-size: 0.82em;
+            font-weight: bold;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: #f8f8f8;
+            border-bottom: 1px solid #eee;
+            flex-shrink: 0;
+        }
+
+        .country-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .country-list li { border-bottom: 1px solid #f0f0f0; }
+        .country-list li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.15s;
+            font-size: 0.98em;
+        }
+        .country-list li a:hover { background: #fff4ec; color: var(--primary); }
+        .step-badge {
+            background: var(--secondary);
+            color: white;
+            font-size: 0.75em;
+            font-weight: bold;
+            padding: 2px 7px;
+            border-radius: 10px;
+            min-width: 28px;
+            text-align: center;
+        }
+        .country-name { flex: 1; font-weight: bold; }
+        .landmark-name {
+            font-size: 0.8em;
+            color: #999;
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .arrow-icon { color: var(--primary); }
+
+        /* World map tooltip */
+        .world-map-tooltip {
+            background: rgba(30,55,153,0.92) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 8px !important;
+            font-family: 'Comic Sans MS', sans-serif !important;
+            font-size: 0.88em !important;
+            padding: 6px 12px !important;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3) !important;
+            white-space: nowrap;
+        }
+
+        /* ===== GALLERY / CARDS ===== */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: auto;
             padding: 0 20px 50px;
         }
-        .card-container {
-            perspective: 1000px;
-            background: transparent;
-        }
-        .card { 
+        .card-container { perspective: 1000px; background: transparent; }
+        .card {
             position: relative;
             width: 100%;
             height: 100%;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
         }
         .card.flipped { transform: rotateY(180deg); }
-        
-        .card-front, .card-back { 
-            backface-visibility: hidden; 
-            background: #fff; 
-            border-radius: 16px; 
-            box-shadow: 0 8px 15px rgba(0,0,0,0.08); 
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
             width: 100%;
         }
-        
-        .card-front {
-            position: relative;
-            z-index: 2;
-        }
-
-        .card-back { 
+        .card-front { position: relative; z-index: 2; }
+        .card-back {
             position: absolute;
             top: 0; left: 0; height: 100%;
-            transform: rotateY(180deg); 
-            padding: 15px; 
+            transform: rotateY(180deg);
+            padding: 15px;
             box-sizing: border-box;
         }
-
         .img-container { cursor: pointer; overflow: hidden; border-radius: 16px 16px 0 0; }
         .img-container img { width: 100%; display: block; aspect-ratio: 2/3; object-fit: cover; transition: transform 0.3s; }
         .img-container:hover img { transform: scale(1.05); }
-        
         .card-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
         h3 { margin: 0 0 5px; font-size: 1.5em; color: var(--secondary); }
         p.landmark { margin: 0 0 10px; color: #7f8c8d; font-size: 1em; }
-        
         .story-snippet {
             font-size: 1em; color: #444; background: #fdfdfd; border-left: 4px solid var(--primary);
             padding: 10px; margin: 10px 0; font-style: italic; text-align: left; border-radius: 4px; flex-grow: 1;
         }
-        
         .map-btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
             background: var(--primary); color: white; text-decoration: none;
@@ -105,196 +267,412 @@
         .map-btn:hover { background: #E66700; }
         .map-btn.back-btn { background: #7f8c8d; margin-top: 10px; }
         .map-btn.back-btn:hover { background: #95a5a6; }
-        
         .badge {
             position: absolute; top: 15px; right: 15px; background: var(--primary); color: white;
             padding: 5px 12px; border-radius: 15px; font-weight: bold; font-size: 0.9em;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10; pointer-events: none;
         }
-        
-        /* Map Back elements */
-        .map-wrapper { flex-grow: 1; width: 100%; border-radius: 8px; background: #eaeaea; z-index: 1; min-height: 250px;}
+        .map-wrapper { flex-grow: 1; width: 100%; border-radius: 8px; background: #eaeaea; z-index: 1; min-height: 250px; }
         .gmaps-link {
             display: block; background: var(--secondary); color: white; padding: 10px; border-radius: 50px;
             text-decoration: none; font-weight: bold; transition: background 0.2s; text-align: center; margin-top: 10px; font-size: 0.9em;
         }
         .gmaps-link:hover { background: #152770; }
-
-        /* Custom Marker (Dragon Ball) */
         .dragon-ball-marker { background: none; border: none; }
 
-        /* Lightbox image en grand */
+        /* Lightbox */
         .modal {
-            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
         }
         .modal.active { display: flex; align-items: center; justify-content: center; flex-direction: column; }
-        .close-btn { position: absolute; top: 15px; right: 30px; color: white; font-size: 45px; font-weight: bold; cursor: pointer; z-index: 2001; }
+        .close-btn { position: absolute; top: 15px; right: 30px; color: white; font-size: 45px; font-weight: bold; cursor: pointer; z-index: 10001; }
         .close-btn:hover { color: var(--primary); }
         .modal-img-content { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
+
+        /* Highlight pulse animation for navigated card */
+        @keyframes cardHighlight {
+            0%   { box-shadow: 0 0 0 0px rgba(255,115,0,0); }
+            30%  { box-shadow: 0 0 0 6px rgba(255,115,0,0.7), 0 8px 30px rgba(255,115,0,0.3); }
+            100% { box-shadow: 0 8px 15px rgba(0,0,0,0.08); }
+        }
+        .card-highlight {
+            animation: cardHighlight 1.6s ease-out forwards;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            .burger-btn { top: 14px; right: 14px; }
+            .side-drawer { width: 100vw; max-width: 100vw; }
+            #world-overview-map { height: 220px; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🌍 Goku & Chi-Chi autour du monde ! 🐉</h1>
-        <p class="description">
-            <strong>Le Radar à Dragon Balls s'affole aux quatre coins du globe ! 🌍🐉</strong><br><br>
-            Embarque sur le Nuage Magique avec Goku et Chi-Chi pour un tour du monde extraordinaire ! De l'Asie mystérieuse aux vastes plaines d'Afrique en passant par l'Europe, suis leurs aventures inédites étape par étape.<br><br>
-            À chaque escale, lis leur carnet de voyage, découvre un nouveau pays et clique sur <em>"📍 Le Trajet du Nuage Magique"</em> pour retourner la carte et voir d'où ils viennent ! Prêt pour l'expédition ? <strong>Kaméhaméha !</strong>
-        </p>
-        <a href="#latest-adventure" class="latest-btn-header">⬇️ Découvrir la dernière aventure !</a>
+
+    <!-- Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeBurgerMenu()"></div>
+
+    <!-- Side Drawer -->
+    <div class="side-drawer" id="sideDrawer" role="dialog" aria-modal="true" aria-label="Navigation par pays">
+        <div class="drawer-header">
+            <h2>🌍 Tour du Monde — Carte</h2>
+            <button class="drawer-close" onclick="closeBurgerMenu()" aria-label="Fermer">&#10005;</button>
+        </div>
+        <div class="drawer-stats" id="drawerStats">Chargement...</div>
+        <div class="drawer-body">
+            <div id="world-overview-map"></div>
+            <div class="drawer-section-title">&#128205; Étapes — cliquer pour y aller</div>
+            <ul class="country-list" id="drawerCountryList"></ul>
+        </div>
     </div>
-    
+
+    <!-- Header -->
+    <div class="header">
+        <button class="burger-btn" id="burgerBtn" onclick="toggleBurgerMenu()" aria-label="Ouvrir la carte des pays visités" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h1>&#127757; Goku &amp; Chi-Chi autour du monde ! &#128009;</h1>
+        <p class="description">
+            <strong>Le Radar à Dragon Balls s'affole aux quatre coins du globe ! &#127757;&#128009;</strong><br><br>
+            Embarque sur le Nuage Magique avec Goku et Chi-Chi pour un tour du monde extraordinaire ! De l'Asie mystérieuse aux vastes plaines d'Afrique en passant par l'Europe, suis leurs aventures inédites étape par étape.<br><br>
+            À chaque escale, lis leur carnet de voyage, découvre un nouveau pays et clique sur <em>"&#128205; Le Trajet du Nuage Magique"</em> pour retourner la carte et voir d'où ils viennent ! Prêt pour l'expédition ? <strong>Kaméhaméha !</strong>
+        </p>
+        <a href="#latest-adventure" class="latest-btn-header">&#11015;&#65039; Découvrir la dernière aventure !</a>
+    </div>
+
     <div class="gallery" id="gallery"></div>
 
+    <!-- Lightbox -->
     <div id="imageModal" class="modal">
         <span class="close-btn" onclick="closeImage()">&times;</span>
-        <img class="modal-img-content" id="expandedImg">
+        <img class="modal-img-content" id="expandedImg" alt="">
     </div>
 
-    <!-- Script Leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const maps = {};
-        const coordsCache = {};
+    // =========================================================================
+    // CONSTANTS & STATE
+    // =========================================================================
+    const maps = {};
+    let worldOverviewMap = null;
+    let worldGeoLayer = null;
+    let appData = [];
 
-        // Custom Dragon Ball SVG Markers (1 star for start, 4 star for end)
-        const dbStartHTML = `<svg viewBox="0 0 100 100" style="filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.4));"><circle cx="50" cy="50" r="48" fill="#f39c12" stroke="#e67e22" stroke-width="4"/><text x="50" y="65" font-size="50" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text></svg>`;
-        const dbEndHTML = `<svg viewBox="0 0 100 100" style="filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.4));"><circle cx="50" cy="50" r="48" fill="#f39c12" stroke="#e67e22" stroke-width="4"/><text x="35" y="45" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text><text x="65" y="45" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text><text x="35" y="75" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text><text x="65" y="75" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">★</text></svg>`;
-        
-        const dbStartIcon = L.divIcon({ className: 'dragon-ball-marker', html: dbStartHTML, iconSize: [36, 36], iconAnchor: [18, 18] });
-        const dbEndIcon = L.divIcon({ className: 'dragon-ball-marker', html: dbEndHTML, iconSize: [36, 36], iconAnchor: [18, 18] });
+    // French country name → ISO 3166-1 alpha-2
+    const COUNTRY_ISO = {
+        'Chine': 'CN', 'France': 'FR', 'Égypte': 'EG', 'États-Unis': 'US',
+        'Japon': 'JP', 'Italie': 'IT', 'Brésil': 'BR', 'Inde': 'IN',
+        'Australie': 'AU', 'Royaume-Uni': 'GB', 'Pérou': 'PE', 'Grèce': 'GR',
+        'Canada': 'CA', 'Mexique': 'MX', 'Turquie': 'TR', 'Émirats Arabes Unis': 'AE',
+        'Russie': 'RU', 'Espagne': 'ES', 'Cambodge': 'KH', 'Jordanie': 'JO',
+        'Thaïlande': 'TH', 'Madagascar': 'MG', 'Argentine': 'AR', 'Nouvelle-Zélande': 'NZ',
+        'Afrique du Sud': 'ZA', 'Maroc': 'MA', 'Tanzanie': 'TZ', 'Indonésie': 'ID',
+        'Vietnam': 'VN', 'Corée du Sud': 'KR', 'Allemagne': 'DE', 'Suisse': 'CH',
+        'Norvège': 'NO', 'Pays-Bas': 'NL', 'Belgique': 'BE', 'Portugal': 'PT',
+        'Bolivie': 'BO', 'Maldives': 'MV', 'Islande': 'IS', 'Kenya': 'KE',
+        'Antarctique': 'AQ', 'Autriche': 'AT', 'Suède': 'SE', 'Danemark': 'DK',
+        'Finlande': 'FI', 'Irlande': 'IE', 'Écosse': 'GB', 'Pologne': 'PL',
+        'République Tchèque': 'CZ', 'Hongrie': 'HU', 'Roumanie': 'RO', 'Croatie': 'HR',
+        'Serbie': 'RS', 'Bulgarie': 'BG', 'Ukraine': 'UA', 'Estonie': 'EE', 'Lettonie': 'LV'
+    };
 
-        function closeImage() {
-            document.getElementById('imageModal').classList.remove('active');
+    // =========================================================================
+    // BURGER MENU
+    // =========================================================================
+    function toggleBurgerMenu() {
+        const isOpen = document.getElementById('sideDrawer').classList.contains('open');
+        isOpen ? closeBurgerMenu() : openBurgerMenu();
+    }
+
+    function openBurgerMenu() {
+        document.getElementById('burgerBtn').classList.add('open');
+        document.getElementById('burgerBtn').setAttribute('aria-expanded', 'true');
+        document.getElementById('sideDrawer').classList.add('open');
+        document.getElementById('drawerOverlay').classList.add('open');
+        if (!worldOverviewMap) setTimeout(initWorldOverviewMap, 250);
+    }
+
+    function closeBurgerMenu() {
+        document.getElementById('burgerBtn').classList.remove('open');
+        document.getElementById('burgerBtn').setAttribute('aria-expanded', 'false');
+        document.getElementById('sideDrawer').classList.remove('open');
+        document.getElementById('drawerOverlay').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBurgerMenu(); });
+
+    // =========================================================================
+    // WORLD OVERVIEW MAP
+    // =========================================================================
+    function initWorldOverviewMap() {
+        if (worldOverviewMap) return;
+
+        worldOverviewMap = L.map('world-overview-map', {
+            center: [20, 10],
+            zoom: 1,
+            zoomControl: true,
+            scrollWheelZoom: false,
+            minZoom: 1,
+            maxZoom: 6,
+            worldCopyJump: true
+        });
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 6
+        }).addTo(worldOverviewMap);
+
+        // Build visited sets
+        const visitedISO = new Set();
+        const isoToFirstIndex = {};  // ISO → first card index
+        const isoToAllIndices = {};  // ISO → all card indices
+
+        appData.forEach((item, idx) => {
+            const iso = COUNTRY_ISO[item.country];
+            if (!iso) return;
+            visitedISO.add(iso);
+            if (isoToFirstIndex[iso] === undefined) isoToFirstIndex[iso] = idx;
+            if (!isoToAllIndices[iso]) isoToAllIndices[iso] = [];
+            isoToAllIndices[iso].push(idx);
+        });
+
+        // Load GeoJSON
+        fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson')
+            .then(r => r.json())
+            .then(geojson => {
+                worldGeoLayer = L.geoJSON(geojson, {
+                    style: feature => {
+                        const iso = feature.properties.ISO_A2;
+                        const visited = visitedISO.has(iso);
+                        return {
+                            fillColor: visited ? '#FF7300' : '#cddbe8',
+                            fillOpacity: visited ? 0.82 : 0.35,
+                            color: visited ? '#1E3799' : '#a0b8cc',
+                            weight: visited ? 1.5 : 0.4
+                        };
+                    },
+                    onEachFeature: (feature, layer) => {
+                        const iso = feature.properties.ISO_A2;
+                        if (!visitedISO.has(iso)) return;
+
+                        const firstIdx = isoToFirstIndex[iso];
+                        const allIdx = isoToAllIndices[iso];
+                        const item = appData[firstIdx];
+                        const countryLabel = item ? item.country : (feature.properties.ADMIN || iso);
+                        const stepLabels = allIdx.map(i => 'Étape ' + (i + 1)).join(' &amp; ');
+
+                        layer.bindTooltip(
+                            '<strong>' + countryLabel + '</strong><br><span style="color:#FFA502;font-size:0.9em">' + stepLabels + '</span>',
+                            { className: 'world-map-tooltip', sticky: true, direction: 'top', offset: [0, -6] }
+                        );
+
+                        layer.on('click', () => {
+                            closeBurgerMenu();
+                            setTimeout(() => navigateToStep(firstIdx), 400);
+                        });
+
+                        layer.on('mouseover', () => layer.setStyle({ fillColor: '#FFA502', fillOpacity: 1, color: '#1E3799', weight: 2.5 }));
+                        layer.on('mouseout', () => worldGeoLayer.resetStyle(layer));
+                    }
+                }).addTo(worldOverviewMap);
+
+                worldOverviewMap.invalidateSize();
+            })
+            .catch(() => {
+                // Fallback: circle markers
+                appData.forEach((item, idx) => {
+                    if (!item.lat || !item.lon) return;
+                    const m = L.circleMarker([item.lat, item.lon], {
+                        radius: 7, fillColor: '#FF7300', color: '#1E3799', weight: 2, fillOpacity: 0.9
+                    }).addTo(worldOverviewMap);
+                    m.bindTooltip('<strong>' + item.country + '</strong><br>Étape ' + (idx+1), { className: 'world-map-tooltip', sticky: true });
+                    m.on('click', () => { closeBurgerMenu(); setTimeout(() => navigateToStep(idx), 400); });
+                });
+                worldOverviewMap.invalidateSize();
+            });
+    }
+
+    // =========================================================================
+    // NAVIGATE TO CARD
+    // =========================================================================
+    function navigateToStep(index) {
+        const el = document.getElementById('card-container-' + index);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            el.classList.remove('card-highlight');
+            void el.offsetWidth; // reflow to restart animation
+            el.classList.add('card-highlight');
         }
-        function openImage(src) {
-            document.getElementById('expandedImg').src = src;
-            document.getElementById('imageModal').classList.add('active');
-        }
-        window.onclick = function(event) {
-            const imgModal = document.getElementById('imageModal');
-            if (event.target == imgModal) closeImage();
-        }
+    }
 
-        async function getCoords(place) {
-            if (coordsCache[place]) return coordsCache[place];
-            try {
-                const res = await fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(place) + '&limit=1');
-                const data = await res.json();
-                if (data && data.length > 0) {
-                    coordsCache[place] = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
-                    return coordsCache[place];
-                }
-            } catch(e) { console.error(e); }
-            return null;
-        }
+    // =========================================================================
+    // DRAWER COUNTRY LIST
+    // =========================================================================
+    function populateDrawerList(data) {
+        const list = document.getElementById('drawerCountryList');
+        list.innerHTML = '';
 
-        function flipCard(index) {
-            document.getElementById('card-' + index).classList.add('flipped');
-            setTimeout(() => initMapForCard(index), 400); // init map after flip animation
-        }
+        data.forEach((item, idx) => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#';
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                closeBurgerMenu();
+                setTimeout(() => navigateToStep(idx), 400);
+            });
 
-        function unflipCard(index) {
-            document.getElementById('card-' + index).classList.remove('flipped');
-        }
+            const badge = document.createElement('span');
+            badge.className = 'step-badge';
+            badge.textContent = idx + 1;
 
-        async function initMapForCard(index) {
-            if (maps[index]) return; 
+            const cname = document.createElement('span');
+            cname.className = 'country-name';
+            cname.textContent = item.country;
 
-            const mapDiv = document.getElementById('map-' + index);
-            
-            const currLat = parseFloat(mapDiv.getAttribute('data-lat'));
-            const currLon = parseFloat(mapDiv.getAttribute('data-lon'));
-            const prevLatStr = mapDiv.getAttribute('data-prev-lat');
-            const prevLonStr = mapDiv.getAttribute('data-prev-lon');
+            const lname = document.createElement('span');
+            lname.className = 'landmark-name';
+            lname.textContent = item.landmark;
 
-            const map = L.map('map-' + index).setView([20, 0], 2);
-            maps[index] = map;
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap'
-            }).addTo(map);
-            
-            map.invalidateSize();
+            const arrow = document.createElement('span');
+            arrow.className = 'arrow-icon';
+            arrow.textContent = '→';
 
-            let currCoords = (currLat && currLon) ? [currLat, currLon] : null;
-            let prevCoords = (prevLatStr && prevLonStr) ? [parseFloat(prevLatStr), parseFloat(prevLonStr)] : null;
+            a.append(badge, cname, lname, arrow);
+            li.appendChild(a);
+            list.appendChild(li);
+        });
 
-            if (currCoords) {
-                if (prevCoords) {
-                    L.marker(prevCoords, {icon: dbStartIcon, zIndexOffset: 1000}).addTo(map);
-                    L.marker(currCoords, {icon: dbEndIcon, zIndexOffset: 2000}).addTo(map);
-                    
-                    L.polyline([prevCoords, currCoords], {
-                        color: '#f1c40f',
-                        weight: 4,
-                        dashArray: '10, 10',
-                        lineCap: 'round'
-                    }).addTo(map);
-                    
-                    const bounds = L.latLngBounds(prevCoords, currCoords);
-                    map.fitBounds(bounds, {padding: [30, 30], maxZoom: 5});
-                } else {
-                    L.marker(currCoords, {icon: dbEndIcon}).addTo(map);
-                    map.setView(currCoords, 4);
-                }
+        const uniqueCountryCount = new Set(data.map(d => COUNTRY_ISO[d.country] || d.country)).size;
+        document.getElementById('drawerStats').textContent =
+            '🗺️ ' + data.length + ' étapes · 🌍 ' + uniqueCountryCount + ' pays visités';
+    }
+
+    // =========================================================================
+    // CARD FLIP MAPS (original logic)
+    // =========================================================================
+    const dbStartHTML = `<svg viewBox="0 0 100 100" style="filter:drop-shadow(0px 3px 3px rgba(0,0,0,0.4))"><circle cx="50" cy="50" r="48" fill="#f39c12" stroke="#e67e22" stroke-width="4"/><text x="50" y="65" font-size="50" font-family="Arial" text-anchor="middle" fill="#c0392b">&#9733;</text></svg>`;
+    const dbEndHTML = `<svg viewBox="0 0 100 100" style="filter:drop-shadow(0px 3px 3px rgba(0,0,0,0.4))"><circle cx="50" cy="50" r="48" fill="#f39c12" stroke="#e67e22" stroke-width="4"/><text x="35" y="45" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">&#9733;</text><text x="65" y="45" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">&#9733;</text><text x="35" y="75" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">&#9733;</text><text x="65" y="75" font-size="25" font-family="Arial" text-anchor="middle" fill="#c0392b">&#9733;</text></svg>`;
+
+    const dbStartIcon = L.divIcon({ className: 'dragon-ball-marker', html: dbStartHTML, iconSize: [36, 36], iconAnchor: [18, 18] });
+    const dbEndIcon   = L.divIcon({ className: 'dragon-ball-marker', html: dbEndHTML,   iconSize: [36, 36], iconAnchor: [18, 18] });
+
+    function closeImage() { document.getElementById('imageModal').classList.remove('active'); }
+    function openImage(src) {
+        document.getElementById('expandedImg').src = src;
+        document.getElementById('imageModal').classList.add('active');
+    }
+    window.onclick = e => { if (e.target === document.getElementById('imageModal')) closeImage(); };
+
+    function flipCard(index) {
+        document.getElementById('card-' + index).classList.add('flipped');
+        setTimeout(() => initMapForCard(index), 400);
+    }
+    function unflipCard(index) {
+        document.getElementById('card-' + index).classList.remove('flipped');
+    }
+
+    async function initMapForCard(index) {
+        if (maps[index]) return;
+        const mapDiv = document.getElementById('map-' + index);
+        const currLat = parseFloat(mapDiv.getAttribute('data-lat'));
+        const currLon = parseFloat(mapDiv.getAttribute('data-lon'));
+        const prevLatStr = mapDiv.getAttribute('data-prev-lat');
+        const prevLonStr = mapDiv.getAttribute('data-prev-lon');
+
+        const map = L.map('map-' + index).setView([20, 0], 2);
+        maps[index] = map;
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+        map.invalidateSize();
+
+        const currCoords = (currLat && currLon) ? [currLat, currLon] : null;
+        const prevCoords = (prevLatStr && prevLonStr) ? [parseFloat(prevLatStr), parseFloat(prevLonStr)] : null;
+
+        if (currCoords) {
+            if (prevCoords) {
+                L.marker(prevCoords, { icon: dbStartIcon, zIndexOffset: 1000 }).addTo(map);
+                L.marker(currCoords, { icon: dbEndIcon,   zIndexOffset: 2000 }).addTo(map);
+                L.polyline([prevCoords, currCoords], { color: '#f1c40f', weight: 4, dashArray: '10, 10', lineCap: 'round' }).addTo(map);
+                map.fitBounds(L.latLngBounds(prevCoords, currCoords), { padding: [30, 30], maxZoom: 5 });
+            } else {
+                L.marker(currCoords, { icon: dbEndIcon }).addTo(map);
+                map.setView(currCoords, 4);
             }
         }
+    }
 
-        fetch('data.json').then(r => r.json()).then(data => {
-            const gallery = document.getElementById('gallery');
-            
-            data.forEach((item, index) => {
-                const stepNumber = index + 1;
-                
-                // Determine previous location for the flight path
-                const prevItem = index > 0 ? data[index - 1] : null;
-                const lat = item.lat || 0;
-                const lon = item.lon || 0;
-                const prevLat = prevItem ? (prevItem.lat || 0) : '';
-                const prevLon = prevItem ? (prevItem.lon || 0) : '';
-                
-                const container = document.createElement('div');
-                container.className = 'card-container';
-                if (index === data.length - 1) container.id = 'latest-adventure';
-                
-                const imgSrc = 'images/' + item.filename;
-                const safeLandmark = item.landmark.replace(/'/g, "&apos;").replace(/"/g, "&quot;");
-                const safeCountry = item.country.replace(/'/g, "&apos;").replace(/"/g, "&quot;");
-                const query = encodeURIComponent(item.landmark + ', ' + item.country);
-                const mapLink = item.mapLink || 'https://www.google.com/maps/search/?api=1&query=' + query;
-                const safeStory = item.story ? item.story.replace(/'/g, "&apos;").replace(/"/g, "&quot;") : '';
+    // =========================================================================
+    // MAIN — LOAD DATA & BUILD GALLERY
+    // =========================================================================
+    fetch('data.json').then(r => r.json()).then(data => {
+        appData = data;
+        const gallery = document.getElementById('gallery');
 
-                container.innerHTML = `
-                    <div class="card" id="card-${index}">
-                        <!-- FRONT -->
-                        <div class="card-front">
-                            <div class="badge">Étape ${stepNumber}</div>
-                            <div class="img-container" onclick="openImage('${imgSrc}')">
-                                <img src="${imgSrc}" alt="${item.country}" loading="lazy" title="Cliquez pour agrandir !">
-                            </div>
-                            <div class="card-info">
-                                <h3>${item.country}</h3>
-                                <p class="landmark">${item.landmark}</p>
-                                ${safeStory ? `<div class="story-snippet">${safeStory}</div>` : ''}
-                                <button onclick="flipCard(${index})" class="map-btn">
-                                    <span class="map-icon">☁️</span> Le Trajet du Nuage Magique
-                                </button>
-                            </div>
+        data.forEach((item, index) => {
+            const prevItem = index > 0 ? data[index - 1] : null;
+            const lat     = item.lat || 0;
+            const lon     = item.lon || 0;
+            const prevLat = prevItem ? (prevItem.lat || 0) : '';
+            const prevLon = prevItem ? (prevItem.lon || 0) : '';
+
+            const container = document.createElement('div');
+            container.className = 'card-container';
+            container.id = 'card-container-' + index;
+            container.setAttribute('data-card-index', index);
+            // Also mark the last card with the anchor id for the "latest adventure" button
+            if (index === data.length - 1) container.setAttribute('data-latest', 'true');
+
+            const imgSrc       = 'images/' + item.filename;
+            const query        = encodeURIComponent(item.landmark + ', ' + item.country);
+            const mapLink      = item.mapLink || 'https://www.google.com/maps/search/?api=1&query=' + query;
+            const safeStory    = item.story ? item.story.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
+            const stepNumber   = index + 1;
+
+            container.innerHTML = `
+                <div class="card" id="card-${index}">
+                    <div class="card-front">
+                        <div class="badge">Étape ${stepNumber}</div>
+                        <div class="img-container" onclick="openImage('${imgSrc}')">
+                            <img src="${imgSrc}" alt="${item.country}" loading="lazy" title="Cliquez pour agrandir !">
                         </div>
-                        
-                        <!-- BACK (MAP) -->
-                        <div class="card-back">
-                            <h3 style="font-size:1.3em; margin-bottom:10px;">${item.country}</h3>
-                            <div id="map-${index}" class="map-wrapper" data-gmaps="${mapLink}" data-lat="${lat}" data-lon="${lon}" data-prev-lat="${prevLat}" data-prev-lon="${prevLon}"></div>
-                            <a href="${mapLink}" target="_blank" class="gmaps-link">> Google Maps Satellite</a>
-                            <button onclick="unflipCard(${index})" class="map-btn back-btn">↩️ Retour à l'image</button>
+                        <div class="card-info">
+                            <h3>${item.country}</h3>
+                            <p class="landmark">${item.landmark}</p>
+                            ${safeStory ? `<div class="story-snippet">${safeStory}</div>` : ''}
+                            <button onclick="flipCard(${index})" class="map-btn">
+                                <span>☁️</span> Le Trajet du Nuage Magique
+                            </button>
                         </div>
                     </div>
-                `;
-                gallery.appendChild(container);
-            });
-        }).catch(err => console.error('Erreur lors du chargement des données:', err));
+                    <div class="card-back">
+                        <h3 style="font-size:1.3em;margin-bottom:10px;">${item.country}</h3>
+                        <div id="map-${index}" class="map-wrapper"
+                             data-lat="${lat}" data-lon="${lon}"
+                             data-prev-lat="${prevLat}" data-prev-lon="${prevLon}"></div>
+                        <a href="${mapLink}" target="_blank" class="gmaps-link">▶ Google Maps Satellite</a>
+                        <button onclick="unflipCard(${index})" class="map-btn back-btn">↩️ Retour à l'image</button>
+                    </div>
+                </div>
+            `;
+            gallery.appendChild(container);
+        });
+
+        populateDrawerList(data);
+
+        // Add a proper anchor for the "Dernière aventure" button in the header
+        const lastContainer = gallery.lastElementChild;
+        if (lastContainer) {
+            const anchor = document.createElement('span');
+            anchor.id = 'latest-adventure';
+            anchor.style.cssText = 'display:block;position:relative;top:-80px;';
+            lastContainer.prepend(anchor);
+        }
+
+    }).catch(err => console.error('Erreur chargement données:', err));
     </script>
 </body>
 </html>
