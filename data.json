@@ -481,5 +481,13 @@
         "story": "Un ch\u00e2teau sur une \u00eele ! Le Nuage Magique est parfait pour s'y rendre sans se mouiller.",
         "lat": 54.6521,
         "lon": 24.9336
+    },
+    {
+        "country": "Cuba",
+        "landmark": "Vieux La Havane",
+        "filename": "image-1---b148a184-a62c-4811-9a07-b17ec6619390.jpg",
+        "story": "De la musique, des voitures color\u00e9es, et une belle ambiance des Cara\u00efbes !",
+        "lat": 23.1368,
+        "lon": -82.3589
     }
 ]
