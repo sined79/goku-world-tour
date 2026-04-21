@@ -449,5 +449,13 @@
         "story": "Un lieu paisible cach\u00e9 dans les montagnes. Chi-Chi en profite pour se ressourcer.",
         "lat": 42.1333,
         "lon": 23.3402
+    },
+    {
+        "country": "Ukraine",
+        "landmark": "Monast\u00e8re des Grottes de Kiev",
+        "filename": "image-1---19553716-5561-4f90-91d8-b99a6fd155aa.jpg",
+        "story": "Une architecture dor\u00e9e magnifique. Nos h\u00e9ros admirent la beaut\u00e9 spirituelle du lieu.",
+        "lat": 50.4346,
+        "lon": 30.5574
     }
 ]
