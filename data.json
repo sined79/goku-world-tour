@@ -513,5 +513,13 @@
         "story": "Goku s'amuse avec les tortues g\u00e9antes, rappelant de bons souvenirs avec son ma\u00eetre.",
         "lat": -0.7772,
         "lon": -90.3013
+    },
+    {
+        "country": "Venezuela",
+        "landmark": "Salto Angel",
+        "filename": "image-1---c81e1d65-6cdc-421b-a839-168ede0ea9b3.jpg",
+        "story": "La plus haute chute d'eau du monde ! M\u00eame le Nuage Magique est impressionn\u00e9 par la hauteur.",
+        "lat": 5.9686,
+        "lon": -62.5377
     }
 ]
