@@ -529,5 +529,13 @@
         "story": "Une maison-sculpture incroyable au bord de la mer. Chi-Chi adore l'architecture blanche.",
         "lat": -34.9089,
         "lon": -55.0381
+    },
+    {
+        "country": "Paraguay",
+        "landmark": "Ruines j\u00e9suites de Jes\u00fas de Tavarangue",
+        "filename": "image-1---bb7ae6cb-d5b7-49b5-b313-180c94022e6f.jpg",
+        "story": "Une exploration paisible dans les vestiges d'un ancien temps.",
+        "lat": -27.056,
+        "lon": -55.7533
     }
 ]

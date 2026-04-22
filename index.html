@@ -430,7 +430,9 @@
         'Antarctique': 'AQ', 'Autriche': 'AT', 'Suède': 'SE', 'Danemark': 'DK',
         'Finlande': 'FI', 'Irlande': 'IE', 'Écosse': 'GB', 'Pologne': 'PL',
         'République Tchèque': 'CZ', 'Hongrie': 'HU', 'Roumanie': 'RO', 'Croatie': 'HR',
-        'Serbie': 'RS', 'Bulgarie': 'BG', 'Ukraine': 'UA', 'Estonie': 'EE', 'Lettonie': 'LV'
+        'Serbie': 'RS', 'Bulgarie': 'BG', 'Ukraine': 'UA', 'Estonie': 'EE', 'Lettonie': 'LV',
+        'Lituanie': 'LT', 'Cuba': 'CU', 'Colombie': 'CO', 'Chili': 'CL',
+        'Équateur': 'EC', 'Venezuela': 'VE', 'Uruguay': 'UY'
     };
 
     // =========================================================================
@@ -503,8 +505,11 @@
             .then(geojson => {
                 worldGeoLayer = L.geoJSON(geojson, {
                     style: feature => {
-                        // The datasets/geo-countries GeoJSON uses 'ISO3166-1-Alpha-2', NOT 'ISO_A2'
-                        const iso = feature.properties['ISO3166-1-Alpha-2'];
+                        let iso = feature.properties['ISO3166-1-Alpha-2'];
+                        if (iso === '-99') {
+                            if (feature.properties.name === 'France') iso = 'FR';
+                            else if (feature.properties.name === 'Norway') iso = 'NO';
+                        }
                         const visited = visitedISO.has(iso);
                         return {
                             fillColor: visited ? '#FF7300' : '#cddbe8',
@@ -514,8 +519,11 @@
                         };
                     },
                     onEachFeature: (feature, layer) => {
-                        // The datasets/geo-countries GeoJSON uses 'ISO3166-1-Alpha-2', NOT 'ISO_A2'
-                        const iso = feature.properties['ISO3166-1-Alpha-2'];
+                        let iso = feature.properties['ISO3166-1-Alpha-2'];
+                        if (iso === '-99') {
+                            if (feature.properties.name === 'France') iso = 'FR';
+                            else if (feature.properties.name === 'Norway') iso = 'NO';
+                        }
                         if (!visitedISO.has(iso)) return;
 
                         const firstIdx = isoToFirstIndex[iso];
