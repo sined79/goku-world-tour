@@ -521,5 +521,13 @@
         "story": "La plus haute chute d'eau du monde ! M\u00eame le Nuage Magique est impressionn\u00e9 par la hauteur.",
         "lat": 5.9686,
         "lon": -62.5377
+    },
+    {
+        "country": "Uruguay",
+        "landmark": "Casapueblo",
+        "filename": "image-1---bb14acb6-3c7b-4ea5-ae6f-4e97e2fc41e7.jpg",
+        "story": "Une maison-sculpture incroyable au bord de la mer. Chi-Chi adore l'architecture blanche.",
+        "lat": -34.9089,
+        "lon": -55.0381
     }
 ]
