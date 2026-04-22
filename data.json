@@ -497,5 +497,13 @@
         "story": "Une \u00e9glise incroyable construite \u00e0 flanc de canyon. Goku se demande comment ils ont fait.",
         "lat": 0.8055,
         "lon": -77.5858
+    },
+    {
+        "country": "Chili",
+        "landmark": "\u00cele de P\u00e2ques",
+        "filename": "image-1---91f20dfd-7d69-42cb-9d51-4017c610a6ae.jpg",
+        "story": "Goku essaie de faire bouger un Moa\u00ef, mais Chi-Chi lui interdit de toucher aux statues mill\u00e9naires.",
+        "lat": -27.1127,
+        "lon": -109.3496
     }
 ]
