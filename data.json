@@ -489,5 +489,13 @@
         "story": "De la musique, des voitures color\u00e9es, et une belle ambiance des Cara\u00efbes !",
         "lat": 23.1368,
         "lon": -82.3589
+    },
+    {
+        "country": "Colombie",
+        "landmark": "Sanctuaire de Las Lajas",
+        "filename": "image-1---0f90069f-e20c-4999-bbf8-b28d07f5b51f.jpg",
+        "story": "Une \u00e9glise incroyable construite \u00e0 flanc de canyon. Goku se demande comment ils ont fait.",
+        "lat": 0.8055,
+        "lon": -77.5858
     }
 ]
