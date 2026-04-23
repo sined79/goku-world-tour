@@ -577,5 +577,13 @@
         "story": "Le plus grand b\u00e2timent en terre crue au monde. Nos h\u00e9ros respectent le silence du lieu.",
         "lat": 13.9054,
         "lon": -4.5552
+    },
+    {
+        "country": "\u00c9thiopie",
+        "landmark": "\u00c9glises de Lalibela",
+        "filename": "image-1---2b6309a1-c6d9-4256-ab35-680bc2a93655.jpg",
+        "story": "Ces \u00e9glises sont creus\u00e9es directement dans la roche. Un travail colossal qui impressionne nos voyageurs.",
+        "lat": 12.0315,
+        "lon": 39.0411
     }
 ]
