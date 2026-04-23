@@ -561,5 +561,13 @@
         "story": "Des pyramides mayas enfouies dans la jungle ! Goku veut grimper tout en haut pour voir la vue.",
         "lat": 17.222,
         "lon": -89.6237
+    },
+    {
+        "country": "S\u00e9n\u00e9gal",
+        "landmark": "Lac Rose",
+        "filename": "image-1---628633e8-5760-4825-8a3e-8dae5889f700.jpg",
+        "story": "L'eau est vraiment rose ! Goku veut go\u00fbter, mais Chi-Chi lui rappelle que c'est juste tr\u00e8s sal\u00e9.",
+        "lat": 14.8385,
+        "lon": -17.2343
     }
 ]
