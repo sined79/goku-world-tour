@@ -537,5 +537,13 @@
         "story": "Une exploration paisible dans les vestiges d'un ancien temps.",
         "lat": -27.056,
         "lon": -55.7533
+    },
+    {
+        "country": "Panama",
+        "landmark": "Canal de Panama",
+        "filename": "image-1---630fc6f1-b34e-415b-8dcd-18bb9ddb2f20.jpg",
+        "story": "Goku regarde les \u00e9normes bateaux passer les \u00e9cluses et se demande s'il pourrait en soulever un.",
+        "lat": 9.1011,
+        "lon": -79.6953
     }
 ]
