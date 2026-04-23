@@ -553,5 +553,13 @@
         "story": "La nature \u00e0 l'\u00e9tat pur ! Goku rep\u00e8re des singes dans les arbres pendant que Chi-Chi profite de la jungle.",
         "lat": 9.382,
         "lon": -84.1458
+    },
+    {
+        "country": "Guatemala",
+        "landmark": "Tikal",
+        "filename": "image-1---4788003a-6c70-45c4-a6d0-16b4de457966.jpg",
+        "story": "Des pyramides mayas enfouies dans la jungle ! Goku veut grimper tout en haut pour voir la vue.",
+        "lat": 17.222,
+        "lon": -89.6237
     }
 ]
