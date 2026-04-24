@@ -625,5 +625,13 @@
         "story": "Un paysage verdoyant domin\u00e9 par les volcans. Le Nuage Magique s'y fond parfaitement.",
         "lat": -1.4723,
         "lon": 29.5065
+    },
+    {
+        "country": "Iran",
+        "landmark": "Place Naqsh-e Jahan \u00e0 Ispahan",
+        "filename": "image-1---5f891fc6-8f8a-4b38-87ac-06076f4ee490.jpg",
+        "story": "L'une des plus grandes places du monde. L'architecture persane \u00e9merveille Chi-Chi.",
+        "lat": 32.6577,
+        "lon": 51.6776
     }
 ]
