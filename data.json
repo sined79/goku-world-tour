@@ -585,5 +585,13 @@
         "story": "Ces \u00e9glises sont creus\u00e9es directement dans la roche. Un travail colossal qui impressionne nos voyageurs.",
         "lat": 12.0315,
         "lon": 39.0411
+    },
+    {
+        "country": "Namibie",
+        "landmark": "Dunes de Sossusvlei",
+        "filename": "image-1---dc74ad1b-de98-4be4-91f7-306597878177.jpg",
+        "story": "Des dunes de sable rouge \u00e0 perte de vue. Goku propose de faire la course jusqu'au sommet.",
+        "lat": -24.7291,
+        "lon": 15.3409
     }
 ]
