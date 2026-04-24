@@ -601,5 +601,13 @@
         "story": "Le bruit de l'eau est assourdissant ! 'La fum\u00e9e qui gronde' m\u00e9rite bien son nom.",
         "lat": -17.9243,
         "lon": 25.856
+    },
+    {
+        "country": "Zimbabwe",
+        "landmark": "Grand Zimbabwe",
+        "filename": "image-1---5f95a134-5997-4e5e-8ab2-1c51197aed14.jpg",
+        "story": "De myst\u00e9rieuses ruines en pierre en Afrique australe. Une belle d\u00e9couverte historique pour Chi-Chi.",
+        "lat": -20.2694,
+        "lon": 30.9304
     }
 ]
