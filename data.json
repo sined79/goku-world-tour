@@ -593,5 +593,13 @@
         "story": "Des dunes de sable rouge \u00e0 perte de vue. Goku propose de faire la course jusqu'au sommet.",
         "lat": -24.7291,
         "lon": 15.3409
+    },
+    {
+        "country": "Zambie",
+        "landmark": "Chutes Victoria",
+        "filename": "image-1---ab11ee73-41cd-4703-98fc-c90c11adda79.jpg",
+        "story": "Le bruit de l'eau est assourdissant ! 'La fum\u00e9e qui gronde' m\u00e9rite bien son nom.",
+        "lat": -17.9243,
+        "lon": 25.856
     }
 ]
