@@ -617,5 +617,13 @@
         "story": "Goku essaie de communiquer avec les gorilles des montagnes, mais ils pr\u00e9f\u00e8rent manger tranquillement.",
         "lat": -1.0505,
         "lon": 29.6212
+    },
+    {
+        "country": "Rwanda",
+        "landmark": "Parc national des volcans",
+        "filename": "image-1---8fd64701-c359-4ab0-ac34-0c22f8fb5048.jpg",
+        "story": "Un paysage verdoyant domin\u00e9 par les volcans. Le Nuage Magique s'y fond parfaitement.",
+        "lat": -1.4723,
+        "lon": 29.5065
     }
 ]
