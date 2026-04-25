@@ -649,5 +649,13 @@
         "story": "Un chef-d'\u0153uvre architectural moderne et paisible.",
         "lat": 23.5835,
         "lon": 58.3888
+    },
+    {
+        "country": "Y\u00e9men",
+        "landmark": "Shibam",
+        "filename": "image-1---67669cb1-7687-4e18-bfa0-056a7cf48857.jpg",
+        "story": "La 'Manhattan du d\u00e9sert' avec ses immenses tours en terre cuite. Goku trouve que c'est un super terrain de jeu.",
+        "lat": 15.9268,
+        "lon": 48.6256
     }
 ]
