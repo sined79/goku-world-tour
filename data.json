@@ -633,5 +633,13 @@
         "story": "L'une des plus grandes places du monde. L'architecture persane \u00e9merveille Chi-Chi.",
         "lat": 32.6577,
         "lon": 51.6776
+    },
+    {
+        "country": "Arabie Saoudite",
+        "landmark": "AlUla",
+        "filename": "image-1---22a53d12-27f3-414d-8491-11ec661dee7a.jpg",
+        "story": "Des tombeaux majestueux taill\u00e9s dans la roche du d\u00e9sert. L'atmosph\u00e8re y est tr\u00e8s mystique.",
+        "lat": 26.6111,
+        "lon": 37.915
     }
 ]
