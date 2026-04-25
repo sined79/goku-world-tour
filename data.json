@@ -657,5 +657,13 @@
         "story": "La 'Manhattan du d\u00e9sert' avec ses immenses tours en terre cuite. Goku trouve que c'est un super terrain de jeu.",
         "lat": 15.9268,
         "lon": 48.6256
+    },
+    {
+        "country": "Pakistan",
+        "landmark": "Mosqu\u00e9e Badshahi",
+        "filename": "image-1---af725c21-02bb-40fd-bbe1-7362791ddc4b.jpg",
+        "story": "Une des plus grandes et plus belles mosqu\u00e9es d'Asie. Son allure majestueuse impose le respect.",
+        "lat": 31.5878,
+        "lon": 74.3106
     }
 ]
