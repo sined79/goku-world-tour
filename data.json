@@ -665,5 +665,13 @@
         "story": "Une des plus grandes et plus belles mosqu\u00e9es d'Asie. Son allure majestueuse impose le respect.",
         "lat": 31.5878,
         "lon": 74.3106
+    },
+    {
+        "country": "N\u00e9pal",
+        "landmark": "Mont Everest",
+        "filename": "image-1---acd83595-3918-420d-bccb-5ef4caea7276.jpg",
+        "story": "Le toit du monde ! L'air est rare, mais pour des experts en arts martiaux, c'est l'endroit parfait pour m\u00e9diter.",
+        "lat": 27.9881,
+        "lon": 86.925
     }
 ]
