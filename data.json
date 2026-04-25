@@ -641,5 +641,13 @@
         "story": "Des tombeaux majestueux taill\u00e9s dans la roche du d\u00e9sert. L'atmosph\u00e8re y est tr\u00e8s mystique.",
         "lat": 26.6111,
         "lon": 37.915
+    },
+    {
+        "country": "Oman",
+        "landmark": "Grande Mosqu\u00e9e du Sultan Qaboos",
+        "filename": "image-1---c1470826-dcd9-4efa-89ea-27a0e52a52c4.jpg",
+        "story": "Un chef-d'\u0153uvre architectural moderne et paisible.",
+        "lat": 23.5835,
+        "lon": 58.3888
     }
 ]
