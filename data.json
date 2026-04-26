@@ -713,5 +713,13 @@
         "story": "De gigantesques tours jumelles. Goku veut voir laquelle des deux est la plus solide.",
         "lat": 3.1578,
         "lon": 101.7115
+    },
+    {
+        "country": "Singapour",
+        "landmark": "Gardens by the Bay",
+        "filename": "image-1---3d5a2ff9-e087-4709-a511-92f320cc4623.jpg",
+        "story": "Des arbres g\u00e9ants qui brillent dans la nuit ! On se croirait sur la plan\u00e8te Namek.",
+        "lat": 1.2816,
+        "lon": 103.8636
     }
 ]
