@@ -705,5 +705,13 @@
         "story": "Un havre de paix le long du M\u00e9kong. Chi-Chi adore la s\u00e9r\u00e9nit\u00e9 ambiante.",
         "lat": 19.8833,
         "lon": 102.1333
+    },
+    {
+        "country": "Malaisie",
+        "landmark": "Tours Petronas",
+        "filename": "image-1---afe321f0-19fe-4390-b763-dd6adc8a20da.jpg",
+        "story": "De gigantesques tours jumelles. Goku veut voir laquelle des deux est la plus solide.",
+        "lat": 3.1578,
+        "lon": 101.7115
     }
 ]
