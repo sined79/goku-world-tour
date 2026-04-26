@@ -689,5 +689,13 @@
         "story": "La plus grande mangrove du monde. Goku cherche le l\u00e9gendaire tigre du Bengale avec le Radar \u00e0 Dragon Balls.",
         "lat": 21.9497,
         "lon": 89.1833
+    },
+    {
+        "country": "Birmanie",
+        "landmark": "Bagan",
+        "filename": "image-1---e6ee9ae6-f3c0-4857-b33d-d2ce561c53a9.jpg",
+        "story": "Des milliers de temples s'\u00e9tendent \u00e0 l'horizon au coucher du soleil. Un moment magique.",
+        "lat": 21.1717,
+        "lon": 94.8585
     }
 ]
