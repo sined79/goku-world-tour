@@ -697,5 +697,13 @@
         "story": "Des milliers de temples s'\u00e9tendent \u00e0 l'horizon au coucher du soleil. Un moment magique.",
         "lat": 21.1717,
         "lon": 94.8585
+    },
+    {
+        "country": "Laos",
+        "landmark": "Luang Prabang",
+        "filename": "image-1---a35324ac-1c7d-4d59-8b05-8790d6626b77.jpg",
+        "story": "Un havre de paix le long du M\u00e9kong. Chi-Chi adore la s\u00e9r\u00e9nit\u00e9 ambiante.",
+        "lat": 19.8833,
+        "lon": 102.1333
     }
 ]
