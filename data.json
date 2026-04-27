@@ -737,5 +737,13 @@
         "story": "Un canyon spectaculaire en marbre. Nos voyageurs profitent de ce paysage vertigineux.",
         "lat": 24.161,
         "lon": 121.6223
+    },
+    {
+        "country": "Fidji",
+        "landmark": "\u00celes Mamanuca",
+        "filename": "image-1---17d7c23e-70ef-4137-8a68-15bf4fd19a8f.jpg",
+        "story": "Le paradis sur terre ! Goku se repose enfin... en p\u00eachant de gros poissons \u00e0 mains nues.",
+        "lat": -17.6531,
+        "lon": 177.0863
     }
 ]
