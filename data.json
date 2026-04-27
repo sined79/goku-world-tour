@@ -729,5 +729,13 @@
         "story": "Des escaliers g\u00e9ants sculpt\u00e9s dans les montagnes ! Parfait pour l'entra\u00eenement des jambes selon Goku.",
         "lat": 16.9189,
         "lon": 121.056
+    },
+    {
+        "country": "Taiwan",
+        "landmark": "Gorges de Taroko",
+        "filename": "image-1---354c694e-d6aa-4c0f-a746-e3d90dc8e710.jpg",
+        "story": "Un canyon spectaculaire en marbre. Nos voyageurs profitent de ce paysage vertigineux.",
+        "lat": 24.161,
+        "lon": 121.6223
     }
 ]
